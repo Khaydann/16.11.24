@@ -1,0 +1,60 @@
+.payattention-text{
+    line-height: 2;
+      margin: 30px;
+     
+      .pa-p{
+          color: #767676;
+          font-family: "corpo-s-text", Arial, Verdana, Helvetica, sans-serif;
+          margin: 30px;
+      }
+  }
+  
+  
+  
+  .pa-h2{
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 30px;
+}  
+    .swiper-pagination-bullet {
+      background-color: #746e6e; 
+    }
+    
+    .swiper-pagination-bullet-active {
+      background-color: #585858;
+    }
+
+    .hp-p2{
+        margin-top: 30px;
+    }
+    .hp-p2,.hp-p1{
+        margin-left: 30px;
+     
+        
+ 
+      font-size: 20px;
+        font-weight: 400;
+        letter-spacing: normal;
+        
+        color: #767676;
+    }
+    .hp-btn {
+        padding: 17px 25px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+        border-radius: 30px;
+        background-color: #014881;
+        font-weight: bold;
+        color: white;
+        font-size: 17px;
+        border: none;
+        transition: 1s;
+    }
+
+    .hp-btn:hover {
+        background: linear-gradient(45deg, #0288d1, #014881);
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
