@@ -66,7 +66,7 @@ import { useNavigate } from 'react-router-dom'
                    
                   
                     
-                   <span>Bizimlə Əlaqə</span>
+                   <span className="f-elaqe" onClick={()=>navigate("/Bizimlə-əlaqə")}>Bizimlə Əlaqə</span>
                   
                   </div>
                   <hr></hr>

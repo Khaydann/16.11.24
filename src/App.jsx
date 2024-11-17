@@ -4,7 +4,8 @@ import Homepage from './assets/Pages/Hompage/Homepage'
 import Kuki from './assets/Pages/Kuki/Kuki'
 import Condition from './assets/Pages/Condition and rules/Condition'
 import Infosec from './assets/Pages/Info Security/Infosec'
-import Suggestion from './assets/Pages/Suggestion/Suggestion'
+import Elaqe from './assets/Pages/Bizimlə-əlaqə/Elaqe'
+
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Route path="/sert & qaydalar" element={<Condition />} />
         <Route path="/kuki siyaseti" element={<Kuki/>} />
         <Route path="/Məlumatların-Mühafizəsi" element={<Infosec/>} />
-        <Route path="/Mövcud-təkliflər" element={<Suggestion/>} />
+        <Route path="/Bizimlə-əlaqə" element={<Elaqe/>} />
       </Routes>
     </Router>
   )

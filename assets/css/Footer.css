@@ -80,6 +80,10 @@ footer .footer-QR img {
   justify-content: center;
 }
 
+.f-elaqe:hover {
+  cursor: pointer;
+}
+
 .f-extra-nav nav ul {
   display: flex;
   gap: 20px;
