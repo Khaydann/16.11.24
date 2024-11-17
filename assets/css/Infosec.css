@@ -1,0 +1,25 @@
+.infosec-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.is-span {
+  margin: 20px 30px;
+  font-weight: 700;
+  color: #767676;
+}
+
+.is-p {
+  line-height: 1.5;
+  margin: 0 30px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #767676;
+}
+
+.is-h3 {
+  margin: 10px 30px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #767676;
+}

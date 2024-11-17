@@ -1,0 +1,21 @@
+.kuki-main {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kuki-p {
+  margin-top: 30px;
+  line-height: 2.5;
+  margin: 0 30px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #767676;
+}
+
+.kuki-span {
+  margin-top: 30px;
+  margin: 20px 30px;
+  font-weight: 700;
+  color: #767676;
+}

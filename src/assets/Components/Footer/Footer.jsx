@@ -1,6 +1,8 @@
 import React from 'react'
 import './Footer.scss'
+import { useNavigate } from 'react-router-dom'
     const Footer = () => {
+      const navigate= useNavigate()
         const scrollToTop = () => {
             window.scrollTo({
               top: 0,
@@ -24,7 +26,7 @@ import './Footer.scss'
                       <a href="">Test drayva yazılmaq</a>
                     </li>
                     <li>
-                      <a href="">Mövcud təkliflər</a>
+                      <a onClick={()=>navigate("/Mövcud-təkliflər")}  href="">Mövcud təkliflər</a>
                     </li>
                     <li>
                       <a href="">Showroom siyahısı</a>
@@ -91,9 +93,9 @@ import './Footer.scss'
              <div className="f-extra-nav">
                 <nav>
                     <ul>
-                        <li><a href="">Şərtlər və qaydalar</a></li>
-                        <li><a href=""> Kuki Siyasəti</a></li>
-                        <li><a href=""> Məlumatların Mühafizəsi</a></li>
+                        <li><a href="" onClick={()=>navigate("/sert&&qaydalar")}>Şərtlər və qaydalar</a></li>
+                        <li><a href="" onClick={()=>navigate("/kuki-iyaseti")}> Kuki Siyasəti</a></li>
+                        <li><a href="" onClick={()=>navigate("/Məlumatların-Mühafizəsi")}> Məlumatların Mühafizəsi</a></li>
                     </ul>
                 </nav>
              </div>
