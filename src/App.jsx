@@ -7,6 +7,10 @@ import Infosec from './assets/Pages/Info Security/Infosec'
 import Elaqe from './assets/Pages/Bizimlə-əlaqə/Elaqe'
 import Haqqimizda from './assets/Pages/Haqqimizda/Haqqimizda'
 import Showroom from './assets/Pages/Showroom/Showroom'
+import Absheron from './assets/Pages/Absheron/Absheron'
+import Babek from './assets/Pages/Babek/Babek'
+import Servispaketler from './assets/Pages/Servispaketler/Servispaketler'
+import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler'
 
 
 const App = () => {
@@ -20,6 +24,11 @@ const App = () => {
         <Route path="/Bizimlə-əlaqə" element={<Elaqe/>} />
         <Route path="/Haqqımızda" element={<Haqqimizda/>} />
         <Route path="/Showroom" element={<Showroom/>} />
+        <Route path="/Absheron-adress" element={<Absheron/>} />
+        <Route path="/Babek-adress" element={<Babek/>} />
+        <Route path="/Servis-paketler" element={<Servispaketler/>} />
+        <Route path="/Orjinal-hisseler" element={<Orjinalhisseler/>} />
+
       </Routes>
     </Router>
   )

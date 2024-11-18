@@ -1,0 +1,6 @@
+.showroom-cards {
+  display: flex;
+  margin: 30px;
+  width: 100%;
+  justify-content: center;
+}

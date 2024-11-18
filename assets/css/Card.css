@@ -1,26 +1,44 @@
+@charset "UTF-8";
 .card {
-  position: relative;
-  width: 300px;
+  border: 1px solid #d3d3d3; /* Boz rəngdə border */
   border-radius: 8px;
   overflow: hidden;
-  transition: background-color 0.3s ease;
-  background-color: #f9f9f9;
+  width: 300px; /* Lazımi ölçü təyin edin */
+  margin: 20px auto;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Keçid effekti */
 }
 .card:hover {
-  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kölgə effekti */
+  transform: scale(1.02); /* Azca böyümə effekti */
+  cursor: pointer; /* Əl işarəsi */
 }
-.card .card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.card .card-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.card .card-text {
-  padding: 10px;
-  font-size: 18px;
-  color: #333;
-  text-align: center;
+.card .card-images .card-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }
-.card:hover .card-image {
-  transform: scale(1.05);
+.card .card-texts {
+  padding: 15px;
+  background-color: #fff; /* Ağ fon */
+  text-align: left;
+}
+.card .card-texts .card-text {
+  margin: 5px 0;
+  font-size: 17px; /* Böyük şrift ölçüsü */
+  color: #333; /* Tünd boz rəng */
+}
+.card .card-texts .card-span {
+  font-weight: 400;
+  padding: 10px 0; /* Yuxarı-aşağı boşluq */
+  font-size: 20px; /* Böyük şrift */
+  color: #333; /* Tünd boz */
+  display: block; /* Tam sətir */
 }

@@ -47,10 +47,10 @@ import { useNavigate } from 'react-router-dom'
                       <a href="">Həyat tərz kolleksiyası</a>
                     </li>
                     <li>
-                      <a href="">Servis paketler</a>
+                      <a  onClick={()=>navigate("/Servis-paketler")} href="">Servis paketler</a>
                     </li>
                     <li>
-                      <a href="">Orjinal hissələr</a>
+                      <a  onClick={()=>navigate("/Orjinal-hisseler")} href="">Orjinal hissələr</a>
                     </li>
                     <li>
                       <a href="">Təlimat Kitabçası</a>

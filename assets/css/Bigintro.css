@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.bigintro {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; /* Şəkilin üstü ilə mətni uyğunlaşdırır */
+  position: relative;
+}
+.bigintro .bigintro-image {
+  width: 100%; /* Şəkilin ölçüsünü uyğunlaşdırır */
+  height: 500px; /* Şəkilin hündürlüyü */
+  object-fit: cover; /* Şəkil konteynerinə uyğunlaşır */
+}
+.bigintro .bigintro-text {
+  font-size: 40px; /* Mətnin ölçüsü */
+  font-weight: bold; /* Qalın şrift */
+  color: #ffffff;
+  margin-left: 30px; /* Şəkilin solunda boşluq */
+  line-height: 1.3;
+  text-align: left;
+  position: absolute;
+  top: 47%; /* Şəkilin ortasında yerləşdiririk */
+  left: 30px; /* Şəkilin sol tərəfi ilə uyğunlaşdırır */
+  transform: translateY(-50%); /* Mətni şaquli olaraq mərkəzləşdirir */
+}
+.bigintro .bigintro-btn {
+  padding: 17px 25px;
+  width: 20%;
+  border-radius: 30px;
+  background-color: transparent;
+  font-weight: bold;
+  color: white;
+  font-size: 17px;
+  transition: 1s;
+  border: 1px solid white;
+  position: absolute;
+  left: 60px; /* Şəkilin sol tərəfi ilə uyğunlaşdırır */
+  top: 55%;
+}
+.bigintro .bigintro-btn:hover {
+  background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
+  border: 1px solid transparent;
+  color: #333;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

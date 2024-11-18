@@ -1,0 +1,50 @@
+.absheron-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Mərkəzləşdirir */
+    padding: 20px;
+    gap: 20px; /* İki bölmə arasında boşluq */
+  
+    .absheron-info-container {
+      width: 45%; /* Yazılar üçün eni */
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Yazıları şaquli mərkəzləşdirir */
+  
+      .absheron-h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: #333;
+      }
+  
+      .absheron-p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #555;
+      }
+  
+      .absheron-info-divider {
+        margin: 10px 0;
+        border-top: 1px solid #d3d3d3; /* Boz xətt */
+      }
+  
+      .absheron-contact-details {
+        font-weight: 600; /* Daha qalın font */
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+  
+    .absheron-map-container {
+      width: 45%;
+      iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+      }
+    }
+  }
+  
