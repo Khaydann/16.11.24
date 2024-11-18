@@ -5,6 +5,8 @@ import Kuki from './assets/Pages/Kuki/Kuki'
 import Condition from './assets/Pages/Condition and rules/Condition'
 import Infosec from './assets/Pages/Info Security/Infosec'
 import Elaqe from './assets/Pages/Bizimlə-əlaqə/Elaqe'
+import Haqqimizda from './assets/Pages/Haqqimizda/Haqqimizda'
+import Showroom from './assets/Pages/Showroom/Showroom'
 
 
 const App = () => {
@@ -12,10 +14,12 @@ const App = () => {
     <Router>  {/* This will wrap the Routes */}
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/sert & qaydalar" element={<Condition />} />
-        <Route path="/kuki siyaseti" element={<Kuki/>} />
+        <Route path="/sert&&qaydalar" element={<Condition />} />
+        <Route path="/kuki-siyaseti" element={<Kuki/>} />
         <Route path="/Məlumatların-Mühafizəsi" element={<Infosec/>} />
         <Route path="/Bizimlə-əlaqə" element={<Elaqe/>} />
+        <Route path="/Haqqımızda" element={<Haqqimizda/>} />
+        <Route path="/Showroom" element={<Showroom/>} />
       </Routes>
     </Router>
   )

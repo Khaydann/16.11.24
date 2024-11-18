@@ -29,7 +29,7 @@ import { useNavigate } from 'react-router-dom'
                       <a onClick={()=>navigate("/Mövcud-təkliflər")}  href="">Mövcud təkliflər</a>
                     </li>
                     <li>
-                      <a href="">Showroom siyahısı</a>
+                      <a  onClick={()=>navigate("/Showroom")} href="">Showroom siyahısı</a>
                     </li>
                    
                   </ul>
@@ -94,7 +94,7 @@ import { useNavigate } from 'react-router-dom'
                 <nav>
                     <ul>
                         <li><a href="" onClick={()=>navigate("/sert&&qaydalar")}>Şərtlər və qaydalar</a></li>
-                        <li><a href="" onClick={()=>navigate("/kuki-iyaseti")}> Kuki Siyasəti</a></li>
+                        <li><a href="" onClick={()=>navigate("/kuki-siyaseti")}> Kuki Siyasəti</a></li>
                         <li><a href="" onClick={()=>navigate("/Məlumatların-Mühafizəsi")}> Məlumatların Mühafizəsi</a></li>
                     </ul>
                 </nav>

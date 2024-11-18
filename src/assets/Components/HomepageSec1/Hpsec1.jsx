@@ -1,6 +1,8 @@
 import React from 'react'
 import './Hpsec1.scss'
+import { useNavigate } from 'react-router-dom'
 const Hpsec1 = () => {
+  const navigate=useNavigate()
   return (
     <div className='hpsec1-main'>
   
@@ -8,8 +10,8 @@ const Hpsec1 = () => {
 <div className="hpsec1-text">  <h4 className="h4-hpsec1">Sizin üçün yaradılıb</h4>
 <span className="hpsec1-span">Yeni CLE Coupé</span>
 <div className="hpsec1-buttons">
-  <button className="hpsec1-btn1">Haqqımızda</button>
-  <button className="hpsec1-btn2">Əlaqə</button>
+  <button onClick={()=>navigate("/Haqqımızda")} className="hpsec1-btn1">Haqqımızda</button>
+  <button  onClick={()=>navigate("/Bizimlə-əlaqə")} className="hpsec1-btn2">Əlaqə</button>
 </div>
 </div>
 
