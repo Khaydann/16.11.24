@@ -11,6 +11,8 @@ import Absheron from './assets/Pages/Absheron/Absheron'
 import Babek from './assets/Pages/Babek/Babek'
 import Servispaketler from './assets/Pages/Servispaketler/Servispaketler'
 import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler'
+import Login from './assets/Components/Login/Login'
+import Signup from './assets/Components/Signup/Signup'
 
 
 const App = () => {
@@ -28,7 +30,8 @@ const App = () => {
         <Route path="/Babek-adress" element={<Babek/>} />
         <Route path="/Servis-paketler" element={<Servispaketler/>} />
         <Route path="/Orjinal-hisseler" element={<Orjinalhisseler/>} />
-
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/SignUp" element={<Signup/>} />
       </Routes>
     </Router>
   )

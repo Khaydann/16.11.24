@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   text-decoration: none;
   list-style-type: none;
@@ -9,37 +10,68 @@
 .header-main {
   background-color: black;
   width: 100%;
-  height: 170px;
+  padding: 20px 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo mərkəzdə, Login və SignUp sağda */
+  position: relative;
+  padding: 0 20px; /* Logo və Login/SignUp arasında boşluq yaradılması */
+  width: 100%;
 }
 
 .header-logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center; /* Loqonun mərkəzdə olması */
+  flex-grow: 1; /* Loqonun mərkəzdə qalması üçün genişlənməsi */
 }
-
-.header-logo-img1:hover {
-  transform: rotate(360deg); /* Rotate the image 360 degrees on hover */
-}
-
-.header-logo-img1 {
+.header-logo .header-logo-img1 {
+  width: 80px; /* Loqo ölçüsü */
+  height: 80px;
   transition: transform 2s ease;
-  margin-top: 19px;
+}
+.header-logo .header-logo-img1:hover {
+  transform: rotate(360deg); /* Fırlanma effekti */
 }
 
+.header-login-signup {
+  display: flex;
+  justify-content: flex-start; /* Login və SignUp hissələrinin sola düzülməsi */
+  flex-shrink: 0; /* Login və SignUp linklərinin ölçüsünün dəyişməməsi */
+}
+.header-login-signup .link {
+  font-size: 20px;
+  color: #bbbbbb;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-right: 10px; /* Linklər arasına boşluq */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header-login-signup .link:hover {
+  background-color: white;
+  color: black;
+}
+
+.header-properity {
+  margin-top: 20px;
+  text-align: center;
+}
 .header-properity nav ul {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 30px;
 }
 .header-properity nav ul li a {
-  padding: 17px;
+  padding: 10px 20px;
   font-size: 20px;
-  color: #BBBBBB;
+  color: #bbbbbb;
   font-family: "Roboto", sans-serif;
-  transition: 1s;
+  transition: color 0.3s;
 }
 .header-properity nav ul li a:hover {
   color: white;

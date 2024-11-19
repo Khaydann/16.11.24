@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .oh-h2 {
   font-size: 3rem;
   line-height: 2;
@@ -10,4 +11,58 @@
   line-height: 2;
   margin: 30px;
   font-family: "corpo-s-text", Arial, Verdana, Helvetica, sans-serif;
+}
+
+.orjinal-hisseler-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 30px;
+}
+.orjinal-hisseler-main .oh-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Ekranın yarıya bölünməsi */
+  /* İkinci bölmə üçün xüsusi qayda */
+}
+.orjinal-hisseler-main .oh-section .oh-text, .orjinal-hisseler-main .oh-section .oh-image {
+  flex: 1;
+  max-width: 50%;
+}
+.orjinal-hisseler-main .oh-section .oh-text {
+  padding: 1rem;
+}
+.orjinal-hisseler-main .oh-section .oh-text h3 {
+  font-size: 3rem;
+  color: #767676;
+  margin-bottom: 0.5rem;
+}
+.orjinal-hisseler-main .oh-section .oh-text p {
+  font-size: 1rem;
+  line-height: 2;
+}
+.orjinal-hisseler-main .oh-section .oh-image {
+  display: flex;
+  justify-content: center;
+}
+.orjinal-hisseler-main .oh-section .oh-image img {
+  width: 718px;
+  height: 404px;
+  object-fit: cover;
+}
+.orjinal-hisseler-main .oh-section.reverse {
+  flex-direction: row; /* Şəkil solda, mətn sağda olacaq */
+}
+
+.st-main {
+  margin: 30px;
+}
+
+.pa-h2 {
+  color: #767676;
+}
+
+.pa-p {
+  margin-bottom: 30px;
 }
