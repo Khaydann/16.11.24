@@ -1,0 +1,46 @@
+.aksesuar-container {
+  padding: 20px;
+}
+
+.aksesuar-filters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.aksesuar-select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.aksesuar-search {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.aksesuar-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.aksesuar-cards.empty {
+  grid-template-columns: 1fr;
+}
+
+.aksesuar-empty {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  grid-column: 1/-1;
+}

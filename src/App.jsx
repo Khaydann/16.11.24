@@ -13,6 +13,7 @@ import Servispaketler from './assets/Pages/Servispaketler/Servispaketler'
 import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler'
 import Login from './assets/Components/Login/Login'
 import Signup from './assets/Components/Signup/Signup'
+import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar'
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/Orjinal-hisseler" element={<Orjinalhisseler/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/SignUp" element={<Signup/>} />
+        <Route path="/Acs" element={<Aksessuar/>} />
       </Routes>
     </Router>
   )
