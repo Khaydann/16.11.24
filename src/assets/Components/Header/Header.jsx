@@ -11,7 +11,7 @@ const Header = () => {
         {/* Üst Hissə: Logo mərkəzdə, Login və Sign Up sağda */}
         <div className="header-top">
           <div className="header-logo">
-            <img 
+            <img  onClick={()=>navigate("/Homepage")}
               className="header-logo-img1" 
               src="https://d2638j3z8ek976.cloudfront.net/b1678f49515e0085804255bb3746863dd165e690/1726752299/images/mb-star-svg.svg" 
               alt="Mercedes-Benz Logo" 

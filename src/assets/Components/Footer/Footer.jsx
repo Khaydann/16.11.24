@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom'
       <p className="ft-p">Yuxarı</p>
     </div>
             < div className="footer-Main">
-            <img  className="footer-logo-img1"src="https://d2638j3z8ek976.cloudfront.net/b1678f49515e0085804255bb3746863dd165e690/1726752299/images/mb-star-svg.svg" alt="" />
+            <img  onClick={()=>navigate("/Homepage")}  className="footer-logo-img1"src="https://d2638j3z8ek976.cloudfront.net/b1678f49515e0085804255bb3746863dd165e690/1726752299/images/mb-star-svg.svg" alt="" />
 
               <div className="footer-properity">
                 <div className="footer-sirket">
