@@ -1,130 +1,223 @@
+import WarningIcon from '@mui/icons-material/Warning';
+import CloseIcon from '@mui/icons-material/Close';
+import { FaFacebookF, FaTwitter, FaGoogle } from 'react-icons/fa';
+import { CiUser } from 'react-icons/ci';
+import { MdLockOutline } from 'react-icons/md';
+import { useFormik } from 'formik';
+import FormSign from './FormSign';
+import { Alert, IconButton } from '@mui/joy';
 import React, { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import axios from 'axios';
 import './Signup.scss';
+import axios from 'axios';
 
 const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showError, setShowError] = useState({ name: true, password: true, email: true });
+  const [apiError, setApiError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  // const navigate=useNavigate()
 
-  // Parola göz ilə göstərmək üçün toggling funksiyası
-  const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
-  };
-
-  const handleSubmit = async (values) => {
+  const submit = async (value, action) => {
+    setApiError("");  
+    
     try {
-      console.log("Form Values: ", values);  // Form məlumatlarını konsola yazdırırıq
-
-      // Axios ilə API-ya məlumatları göndəririk
-      const newUser = {
-        username: values.username,
-        email: values.email,
-        password: values.password,
-      };
-
-      // API-ya POST sorğusu göndəririk
-      const response = await axios.post('https://673cda4596b8dcd5f3fbef5e.mockapi.io/users', newUser);
+      const existingUsers = await axios.get("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login");
+      const usernameExists = existingUsers.data.some(user => user.name === value.name);
       
-      // Serverdən cavabı yoxlayaq
-      if (response.status === 201) {
-        console.log('User successfully registered:', response.data); // Uğurlu cavab
-      } else {
-        console.error('Error in registration:', response.status); // Uğursuz cavab
+      if (usernameExists) {
+        setApiError("This username already exists. Please choose a different one.");
+        return;
       }
+      const response = await axios.post("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login", value);
+      setSuccessMessage("You have successfully signed up! Please log in");
+      setTimeout(() => router.push("/Pages/login"), 1500);
+      
+      action.resetForm();
     } catch (error) {
-      console.error('There was an error registering the user:', error); // Hər hansı bir səhv olarsa
+      console.error("An unexpected error occurred:", error);
+      setApiError("An error occurred during sign-up. Please try again later.");
     }
   };
 
+  const { values, errors, touched, handleChange, handleSubmit, handleBlur } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: FormSign,
+    onSubmit: submit,
+  });
+
   return (
-    <div className="signup-container">
-      <h1>Sign Up</h1>
-
-      <Formik
-        initialValues={{
-          username: '',
-          email: '',
-          password: '',
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.username) {
-            errors.username = 'Please enter your username';
-          }
-
-          const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/;
-          if (!values.email) {
-            errors.email = 'Please enter your email';
-          } else if (!emailPattern.test(values.email)) {
-            errors.email = 'Invalid email format';
-          }
-
-          if (!values.password) {
-            errors.password = 'Please enter your password';
-          } else if (values.password.length < 8) {
-            errors.password = 'Password must be at least 8 characters long';
-          } else if (!/[A-Za-z]/.test(values.password) || !/[0-9]/.test(values.password) || !/[^A-Za-z0-9]/.test(values.password)) {
-            errors.password = 'Password must contain letters, numbers, and special characters';
-          }
-
-          return errors;
-        }}
-        onSubmit={handleSubmit}
+    <section className="card-Section">
+      <video
+        className="video w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        suppressHydrationWarning
       >
-        {({ errors, touched }) => (
-          <Form className="signup-form">
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <Field
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Enter your username"
-                className="input-field"
-              />
-              <ErrorMessage name="username" component="div" className="error" />
+        <source src="/Aydan'sMc.mp4" type="video/mp4" />
+      </video>
+      <div className="card backdrop-blur-lg bg-black/50 shadow-lg">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="type">
+            <div className="user-name">
+              <label htmlFor="name"><span>Username</span></label>
+              <div className="input anime">
+                <CiUser />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Type your username"
+                  value={values.name}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setShowError((prev) => ({ ...prev, name: true }));
+                  }}
+                  onBlur={handleBlur}
+                />
+              </div>
+              {errors.name && touched.name && showError.name && (
+                <Alert
+                  startDecorator={<WarningIcon />}
+                  variant="soft"
+                  color="danger"
+                  endDecorator={
+                    <IconButton
+                      variant="soft"
+                      size="m"
+                      color="danger"
+                      onClick={() => setShowError((prev) => ({ ...prev, name: false }))}
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                >
+                  {errors.name}
+                </Alert>
+              )}
             </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <Field
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                className="input-field"
-              />
-              <ErrorMessage name="email" component="div" className="error" />
+            <div className="email">
+              <label htmlFor="email"><span>Email</span></label>
+              <div className="input anime">
+                <MdLockOutline />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Type your email"
+                  value={values.email}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setShowError((prev) => ({ ...prev, email: true }));
+                  }}
+                  onBlur={handleBlur}
+                />
+              </div>
+              {errors.email && touched.email && showError.email && (
+                <Alert
+                  startDecorator={<WarningIcon />}
+                  variant="soft"
+                  color="danger"
+                  endDecorator={
+                    <IconButton
+                      variant="soft"
+                      size="m"
+                      color="danger"
+                      onClick={() => setShowError((prev) => ({ ...prev, email: false }))}
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                >
+                  {errors.email}
+                </Alert>
+              )}
             </div>
-
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <div className="password-container">
-                <Field
-                  type={showPassword ? 'text' : 'password'}
+            <div className="password">
+              <label htmlFor="password"><span>Password</span></label>
+              <div className="input">
+                <MdLockOutline />
+                <input
+                  type="password"
                   id="password"
                   name="password"
-                  placeholder="Enter your password"
-                  className="input-field"
+                  placeholder="Type your password"
+                  value={values.password}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setShowError((prev) => ({ ...prev, password: true }));
+                  }}
+                  onBlur={handleBlur}
                 />
-                <span className="password-eye" onClick={togglePasswordVisibility}>
-                  {showPassword ? '🙈' : '👁️'}
-                </span>
               </div>
-              <ErrorMessage name="password" component="div" className="error" />
+              {errors.password && touched.password && showError.password && (
+                <Alert
+                  startDecorator={<WarningIcon />}
+                  variant="soft"
+                  color="danger"
+                  endDecorator={
+                    <IconButton
+                      variant="soft"
+                      size="m"
+                      color="danger"
+                      onClick={() => setShowError((prev) => ({ ...prev, password: false }))}
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                >
+                  {errors.password}
+                </Alert>
+              )}
             </div>
+          </div>
+          <div className="button">
+            <div className="forgot">
+              <button type="submit">Sign Up</button>
+            </div>
+          </div>
+        </form>
 
-            <button type="submit" className="submit-btn">
-              Sign Up
-            </button>
-          </Form>
+        {apiError && (
+          <div className="api-error">
+            <Alert variant="soft" color="danger">
+              {apiError}
+            </Alert>
+          </div>
         )}
-      </Formik>
 
-      <div className="login-link">
-        <p>Already have an account? <a href="/login">Login here</a></p>
+        {successMessage && (
+          <div className="success-message">
+            <Alert variant="soft" color="success">
+              {successMessage}
+            </Alert>
+          </div>
+        )}
+
+        <div className="about">
+          <div className="social-media">
+            <div className="icons">
+              <div className="facebook social">
+                <FaFacebookF className="fb media" />
+              </div>
+              <div className="twitter social">
+                <FaTwitter className="tw media" />
+              </div>
+              <div className="google social">
+                <FaGoogle className="g media" />
+              </div>
+            </div>
+            <div className="sign">
+              {/* <Link href="./../../Pages/login"> I'm already a member Log In</Link> */}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

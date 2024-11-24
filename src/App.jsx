@@ -15,7 +15,6 @@ import Login from './assets/Components/Login/Login'
 import Signup from './assets/Components/Signup/Signup'
 import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar'
 
-
 const App = () => {
   return (
     <Router>  {/* This will wrap the Routes */}

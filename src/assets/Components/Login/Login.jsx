@@ -1,82 +1,202 @@
+import WarningIcon from '@mui/icons-material/Warning';
+import CloseIcon from '@mui/icons-material/Close';
+import { FaFacebookF, FaTwitter, FaGoogle } from 'react-icons/fa';
+import { CiUser } from 'react-icons/ci';
+import { MdLockOutline } from 'react-icons/md';
+import { useFormik } from 'formik';
+import FormLogin from './FormLogin';
+import { Alert, IconButton } from '@mui/joy';
+
 import React, { useState } from 'react';
-import './Login.scss';
+import './Login.scss'
+
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [loginSuccess, setLoginSuccess] = useState(null);
+  const [showError, setShowError] = useState({ name: true, password: true });
+  const navigate=useNavigate()
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-    setEmailError('');
+  const submit = (values, actions) => {
+    setTimeout(() => {
+      axios.get("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login")
+        .then((res) => {
+          const data = res.data;
+          const matchedUser = data.find(
+            (item) => item.name === values.name && item.password === values.password
+          );
+          localStorage.clear();
+          localStorage.setItem(`user`,JSON.stringify(matchedUser));
+          console.log("item=",matchedUser);
+  
+          if (matchedUser) {
+            setLoginSuccess(true);
+            actions.resetForm();
+  
+            router.push(`/`)
+          } else {
+            setLoginSuccess(false);
+          }
+        })
+        .catch((error) => {
+          console.error("API Error:", error);
+          setLoginSuccess(false);
+        });
+    }, 500);
   };
+  
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-    setPasswordError('');
-  };
+  const { values, errors, touched, handleChange, handleSubmit, handleBlur } = useFormik({
+    initialValues: {
+      name: '',
+      password: '',
+    },
+    validationSchema: FormLogin,
+    onSubmit: submit,
+  });
 
-  const validateForm = () => {
-    let valid = true;
-    
-    // Email doğrulama
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!email.match(emailRegex)) {
-      setEmailError('Zəhmət olmasa düzgün bir email ünvanı daxil edin!');
-      valid = false;
-    }
-
-    // Şifrə doğrulama
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-    if (!password.match(passwordRegex)) {
-      setPasswordError('Şifrə ən az 8 simvoldan ibarət olmalı, hərf, rəqəm və xüsusi işarələr daxil edilməlidir!');
-      valid = false;
-    }
-
-    return valid;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Login əməliyyatı
-      console.log('Form göndərildi!');
-    }
+  const handleCloseError = (field) => {
+    setShowError((prev) => ({ ...prev, [field]: false }));
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Giriş Edin</h2>
-
-        {/* Email */}
-        <div className="form-group">
-          <label>Email:</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={handleEmailChange} 
-            placeholder="Emailinizi daxil edin"
-          />
-          {emailError && <span className="error-message">{emailError}</span>}
+    <section className="card-Section">
+      <video
+        className="video w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        suppressHydrationWarning
+      >
+        <source src="/Aydan'sMc.mp4" type="video/mp4" />
+      </video>
+      <div className="card backdrop-blur-lg bg-black/50 shadow-lg">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="type">
+            <div className="user-name">
+              <label htmlFor="name"><span>Username</span></label>
+              <div className="input anime">
+                <CiUser />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Type your username"
+                  value={values.name}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setShowError((prev) => ({ ...prev, name: true }));
+                  }}
+                  onBlur={handleBlur}
+                />
+              </div>
+              {errors.name && touched.name && showError.name && (
+                <Alert
+                startDecorator={<WarningIcon />}
+                variant="soft"
+                color="danger"
+                endDecorator={
+                  <IconButton
+                  variant="soft"
+                  size="m"
+                  color="danger"
+                  onClick={() => handleCloseError('name')}
+                  >
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                  >
+                  {errors.name}
+                </Alert>
+              )}
+            </div>
+            <div className="password">
+              <label htmlFor="password"><span>Password</span></label>
+              <div className="input">
+                <MdLockOutline />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Type your password"
+                  value={values.password}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setShowError((prev) => ({ ...prev, password: true }));
+                  }}
+                  onBlur={handleBlur}
+                  />
+              </div>
+              {errors.password && touched.password && showError.password && (
+                <Alert
+                startDecorator={<WarningIcon />}
+                variant="soft"
+                color="danger"
+                endDecorator={
+                  <IconButton
+                  variant="soft"
+                  size="m"
+                  color="danger"
+                  onClick={() => handleCloseError('password')}
+                  >
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                >
+                  {errors.password}
+                </Alert>
+              )}
+            </div>{loginSuccess === false && (
+                    <Alert
+                      startDecorator={<WarningIcon />}
+                      variant="soft"
+                      color="danger"
+                      endDecorator={
+                        <IconButton
+                          variant="soft"
+                          size="m"
+                          color="danger"
+                          onClick={() => setLoginSuccess(null)}
+                        >
+                          <CloseIcon />
+                        </IconButton>
+                      }
+                    >
+                      Username or password is not correct.
+                    </Alert>
+                  )}
+          </div>
+          <div className="button">
+            <div className="forgot">
+              <button type="submit">LOGIN</button>
+            </div>
+                  
+          </div>
+        </form>
+        
+        <div className="about">
+          <div className="social-media">
+            <div className="icons">
+              <div className="facebook social">
+                <FaFacebookF className="fb media" />
+              </div>
+              <div className="twitter social">
+                <FaTwitter className="tw media" />
+              </div>
+              <div className="google social">
+                <FaGoogle className="g media" />
+              </div>
+            </div>
+            <div className="sign">
+              <span onClick={()=>navigate("./../Pages/Homepage")}>Or Sign Up</span>
+            
+            </div>
+          </div>
         </div>
-
-        {/* Şifrə */}
-        <div className="form-group">
-          <label>Şifrə:</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={handlePasswordChange} 
-            placeholder="Şifrənizi daxil edin"
-          />
-          {passwordError && <span className="error-message">{passwordError}</span>}
-        </div>
-
-        <button type="submit" className="login-btn">Giriş</button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
