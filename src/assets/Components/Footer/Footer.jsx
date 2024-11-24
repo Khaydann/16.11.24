@@ -41,7 +41,7 @@ import { useNavigate } from 'react-router-dom'
                       <a href="">Servisə yazılmaq</a>
                     </li>
                     <li>
-                      <a href="">Aksessuarlar</a>
+                      <a  onClick={()=>navigate("/Aksessuarlar")} href="">Aksessuarlar</a>
                     </li>
                     <li>
                       <a href="">Həyat tərz kolleksiyası</a>

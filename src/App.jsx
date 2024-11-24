@@ -14,6 +14,8 @@ import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler'
 import Login from './assets/Components/Login/Login'
 import Signup from './assets/Components/Signup/Signup'
 import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar'
+import Bigcarousel from './assets/Components/Bigcarousel/Bigcarousel'
+import Vclass from './assets/Pages/Vclass/Vclass'
 
 const App = () => {
   return (
@@ -32,8 +34,10 @@ const App = () => {
         <Route path="/Orjinal-hisseler" element={<Orjinalhisseler/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/SignUp" element={<Signup/>} />
-        <Route path="/Acs" element={<Aksessuar/>} />
+        <Route path="/Aksessuarlar" element={<Aksessuar/>} />
         <Route path="/Homepage" element={<Homepage/>} />
+        <Route path="/a" element={<Bigcarousel/>} />
+        <Route path="/b" element={<Vclass/>} />
       </Routes>
     </Router>
   )
