@@ -9,27 +9,28 @@ import { Alert, IconButton } from '@mui/joy';
 import React, { useState } from 'react';
 import './Signup.scss';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [showError, setShowError] = useState({ name: true, password: true, email: true });
   const [apiError, setApiError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  // const navigate=useNavigate()
+  const navigate=useNavigate()
 
   const submit = async (value, action) => {
     setApiError("");  
     
     try {
-      const existingUsers = await axios.get("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login");
+      const existingUsers = await axios.get("https://6744c25db4e2e04abea38787.mockapi.io/login");
       const usernameExists = existingUsers.data.some(user => user.name === value.name);
       
       if (usernameExists) {
         setApiError("This username already exists. Please choose a different one.");
         return;
       }
-      const response = await axios.post("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login", value);
+      const response = await axios.post("https://6744c25db4e2e04abea38787.mockapi.io/login", value);
       setSuccessMessage("You have successfully signed up! Please log in");
-      setTimeout(() => router.push("/Pages/login"), 1500);
+      setTimeout(() => navigate("/Login"), 1500);
       
       action.resetForm();
     } catch (error) {
@@ -212,7 +213,8 @@ const Signup = () => {
               </div>
             </div>
             <div className="sign">
-              {/* <Link href="./../../Pages/login"> I'm already a member Log In</Link> */}
+              <span onClick={()=>navigate("./../Pages/Homepage")}> I'm already a member Log In</span>
+              {/* <Link href="./../../Pages/login"></Link> */}
             </div>
           </div>
         </div>

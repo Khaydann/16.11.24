@@ -16,6 +16,19 @@ import Signup from './assets/Components/Signup/Signup'
 import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar'
 import Bigcarousel from './assets/Components/Bigcarousel/Bigcarousel'
 import Vclass from './assets/Pages/Vclass/Vclass'
+import Wishlist from './assets/Pages/Wishlist/Wishlist'
+import Eqesedan from './assets/Pages/Eqesedan/Eqesedan'
+import Aclasshatchback from './assets/Pages/AClassHatchback/Aclasshatchback'
+import Classsedan from './assets/Pages/C-Class-Sedan/Classsedan'
+import MaybachSclass from './assets/Pages/Mercedes-MaybachS-Class/MaybachSclass'
+import EQB from './assets/Pages/EQB/EQB'
+import EQA from './assets/Pages/EQA/EQA'
+import GLS from './assets/Pages/GLS/GLS'
+import Gclass from './assets/Pages/G-class/Gclass'
+import Cla from './assets/Pages/CLA/Cla'
+import Clecabriolet from './assets/Pages/CLECabriolet/Clecabriolet'
+import Slroadster from './assets/Pages/SLRoadster/Slroadster'
+import Amggtccoupe from './assets/Pages/AMGGTCoupe/Amggtccoupe'
 
 const App = () => {
   return (
@@ -36,8 +49,20 @@ const App = () => {
         <Route path="/SignUp" element={<Signup/>} />
         <Route path="/Aksessuarlar" element={<Aksessuar/>} />
         <Route path="/Homepage" element={<Homepage/>} />
-        <Route path="/a" element={<Bigcarousel/>} />
+        <Route path="/Wishlist" element={<Wishlist/>} />
         <Route path="/b" element={<Vclass/>} />
+        <Route path="/Eqesedan" element={<Eqesedan/>} />
+        <Route path="/A-class-hatchback" element={<Aclasshatchback/>} />
+        <Route path="/C-Class-Sedan" element={<Classsedan/>} />
+        <Route path="/Mercedes-Maybach-S-Class" element={<MaybachSclass/>} />
+        <Route path="/EQB" element={<EQB/>} />
+        <Route path="/EQA" element={<EQA/>} />
+        <Route path="/GLS" element={<GLS/>} />
+        <Route path="/G-class" element={<Gclass/>} />
+           <Route path="/CLA" element={<Cla/>} />
+           <Route path="/CLE-Cabriolet" element={<Clecabriolet/>} />
+           <Route path="/SL-Roadster" element={<Slroadster/>} />
+           <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
       </Routes>
     </Router>
   )

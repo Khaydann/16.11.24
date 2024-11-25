@@ -6,7 +6,7 @@ import { MdLockOutline } from 'react-icons/md';
 import { useFormik } from 'formik';
 import FormLogin from './FormLogin';
 import { Alert, IconButton } from '@mui/joy';
-
+// import './index.
 import React, { useState } from 'react';
 import './Login.scss'
 
@@ -20,7 +20,7 @@ const Login = () => {
 
   const submit = (values, actions) => {
     setTimeout(() => {
-      axios.get("https://66eba35c2b6cf2b89c5b2596.mockapi.io/login")
+      axios.get("https://6744c25db4e2e04abea38787.mockapi.io/login")
         .then((res) => {
           const data = res.data;
           const matchedUser = data.find(
@@ -33,8 +33,8 @@ const Login = () => {
           if (matchedUser) {
             setLoginSuccess(true);
             actions.resetForm();
-  
-            router.push(`/`)
+            navigate('/');
+           
           } else {
             setLoginSuccess(false);
           }
@@ -190,7 +190,7 @@ const Login = () => {
               </div>
             </div>
             <div className="sign">
-              <span onClick={()=>navigate("./../Pages/Homepage")}>Or Sign Up</span>
+              <span onClick={()=>navigate("/SignUp")}>Or Sign Up</span>
             
             </div>
           </div>
