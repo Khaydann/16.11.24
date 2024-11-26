@@ -98,7 +98,7 @@ const Aksessuar = () => {
                 images={[item.img]}
                 texts={[item.name]}
                 span={[item.price]}
-                id={[item.id]}
+                id={item.id}
                 onAddToCart={() => handleAddToCart(item.id)}
               />
             ))

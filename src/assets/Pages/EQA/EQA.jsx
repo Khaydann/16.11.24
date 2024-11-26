@@ -5,6 +5,7 @@ import Bigcarousel from '../../Components/Bigcarousel/Bigcarousel';
 import Header from '../../Components/Header/Header';
 import Intex from '../../Components/Intex/Intex';
 import Footer from '../../Components/Footer/Footer';
+import Contact from '../../Components/Contact/Contact';
 
 const EQA = () => {
     const [slides, setSlides] = useState([]);
@@ -36,6 +37,8 @@ const EQA = () => {
             <Header />
             <Bigcarousel slides={slides} />
             <Intex intImage={intImage} exImage={exImage} />
+           
+            <Contact images={["//d2638j3z8ek976.cloudfront.net/global-css-files/20240730-073037/images/placeholders/jITe62j1db.jpg"]} />
             <Footer />
         </div>
     );

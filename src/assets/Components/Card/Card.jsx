@@ -3,6 +3,7 @@ import "./Card.scss";
 
 const Card = ({ images, texts, span, onAddToCart, id }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [quantity, setQuantity] = useState(1); // Məhsul miqdarı
 
   // Komponent yükləndikdə wishlist-də olub-olmaması yoxlanılır
   useEffect(() => {
@@ -12,6 +13,36 @@ const Card = ({ images, texts, span, onAddToCart, id }) => {
       setIsFavorite(isInWishlist);
     }
   }, [id]);
+  useEffect(() => {
+  const syncWishlist = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user?.wishlist) {
+      const isInWishlist = user.wishlist.some((item) => item.id === id);
+      setIsFavorite(isInWishlist);
+    }
+  };
+
+  window.addEventListener("storage", syncWishlist);
+
+  return () => {
+    window.removeEventListener("storage", syncWishlist);
+  };
+}, [id]);
+useEffect(() => {
+  const syncWishlist = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user?.wishlist) {
+      const isInWishlist = user.wishlist.some((item) => item.id === id);
+      setIsFavorite(isInWishlist);
+    }
+  };
+
+  window.addEventListener("storage", syncWishlist);
+
+  return () => {
+    window.removeEventListener("storage", syncWishlist);
+  };
+}, [id]);
 
   const handleFavoriteClick = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -50,7 +81,71 @@ const Card = ({ images, texts, span, onAddToCart, id }) => {
       alert("Wishlist-ə əlavə edildi!"); // Yalnız əlavə edildikdə xəbərdarlıq göstəririk
     }
   };
+  const handleAddToCart = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      alert("Zəhmət olmasa, daxil olun!"); // İstifadəçi yoxdur
+      return;
+    }
 
+    let cart = user.cart || [];
+    const price = parseFloat(span?.[0]) || 0; // Qiyməti burdan alırıq
+  const total = price * quantity;
+    const cartItem = {
+      id,
+      name: texts?.[0] || "Naməlum Məhsul",
+      price,
+      img: images?.[0] || "",
+      quantity,
+      total,
+    };
+    const existingItemIndex = cart.findIndex((item) => item.id === id);
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity += quantity;
+      cart[existingItemIndex].total = cart[existingItemIndex].quantity * price;
+
+      alert("Səbətdə məhsulun miqdarı artırıldı!");
+    } else {
+      cart.push(cartItem);
+      alert("Məhsul səbətə əlavə edildi!");
+    }
+    const updatedUser = { ...user, cart };
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
+  const increaseQuantity = () => {
+    setQuantity((prev) => prev + 1);
+    const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) return;
+
+  let cart = user.cart || [];
+  const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+  if (existingItemIndex !== -1) {
+    // Məhsul səbətdə varsa, miqdarı artırırıq
+    cart[existingItemIndex].quantity += 1;
+    cart[existingItemIndex].total = cart[existingItemIndex].quantity * cart[existingItemIndex].price;
+
+    const updatedUser = { ...user, cart };
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  }
+  };
+  const decreaseQuantity = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+    const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) return;
+
+  let cart = user.cart || [];
+  const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+  if (existingItemIndex !== -1 && cart[existingItemIndex].quantity > 1) {
+    // Məhsul səbətdə varsa və miqdar 1-dən böyükdürsə, miqdarı azaldırıq
+    cart[existingItemIndex].quantity -= 1;
+    cart[existingItemIndex].total = cart[existingItemIndex].quantity * cart[existingItemIndex].price;
+
+    const updatedUser = { ...user, cart };
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  }
+  };
   return (
     <div className="card">
       {/* Yuxarı sağ küncdə ürək ikonu */}
@@ -83,13 +178,44 @@ const Card = ({ images, texts, span, onAddToCart, id }) => {
         {span &&
           span.map((s, index) => (
             <span key={index} className="card-span">
-              Qiymət: {s}
+              Qiymət: {parseFloat(span[0]) * quantity}
             </span>
           ))}
-
+          
+          <div className="quantity-control" style={{ margin: "10px 0" }}>
+          <button
+            onClick={decreaseQuantity}
+            style={{
+              padding: "5px 10px",
+              backgroundColor: "#FF6347",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            -
+          </button>
+          <span style={{ margin: "0 10px", fontWeight: "bold" }}>
+            {quantity}
+          </span>
+          <button
+            onClick={increaseQuantity}
+            style={{
+              padding: "5px 10px",
+              backgroundColor: "#32CD32",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            +
+          </button>
+        </div>
         {/* Səbətə əlavə et düyməsi */}
         <button
-          onClick={onAddToCart}
+          onClick={handleAddToCart}
           style={{
             marginTop: "10px",
             padding: "10px 15px",

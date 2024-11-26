@@ -30,6 +30,7 @@ import Clecabriolet from './assets/Pages/CLECabriolet/Clecabriolet'
 import Slroadster from './assets/Pages/SLRoadster/Slroadster'
 import Amggtccoupe from './assets/Pages/AMGGTCoupe/Amggtccoupe'
 
+
 const App = () => {
   return (
     <Router>  {/* This will wrap the Routes */}
@@ -63,6 +64,7 @@ const App = () => {
            <Route path="/CLE-Cabriolet" element={<Clecabriolet/>} />
            <Route path="/SL-Roadster" element={<Slroadster/>} />
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
+           
       </Routes>
     </Router>
   )
