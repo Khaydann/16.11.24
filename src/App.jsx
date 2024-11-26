@@ -29,6 +29,7 @@ import Cla from './assets/Pages/CLA/Cla'
 import Clecabriolet from './assets/Pages/CLECabriolet/Clecabriolet'
 import Slroadster from './assets/Pages/SLRoadster/Slroadster'
 import Amggtccoupe from './assets/Pages/AMGGTCoupe/Amggtccoupe'
+import Basket from './assets/Pages/Basket/Basket'
 
 
 const App = () => {
@@ -64,7 +65,7 @@ const App = () => {
            <Route path="/CLE-Cabriolet" element={<Clecabriolet/>} />
            <Route path="/SL-Roadster" element={<Slroadster/>} />
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
-           
+           <Route path="/Basket" element={<Basket/>} />
       </Routes>
     </Router>
   )
