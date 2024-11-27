@@ -14,7 +14,7 @@ import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler'
 import Login from './assets/Components/Login/Login'
 import Signup from './assets/Components/Signup/Signup'
 import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar'
-import Bigcarousel from './assets/Components/Bigcarousel/Bigcarousel'
+
 import Vclass from './assets/Pages/Vclass/Vclass'
 import Wishlist from './assets/Pages/Wishlist/Wishlist'
 import Eqesedan from './assets/Pages/Eqesedan/Eqesedan'
@@ -30,6 +30,9 @@ import Clecabriolet from './assets/Pages/CLECabriolet/Clecabriolet'
 import Slroadster from './assets/Pages/SLRoadster/Slroadster'
 import Amggtccoupe from './assets/Pages/AMGGTCoupe/Amggtccoupe'
 import Basket from './assets/Pages/Basket/Basket'
+import Header from './assets/Components/Header/Header'
+import Footer from './assets/Components/Footer/Footer'
+
 
 
 const App = () => {
@@ -66,6 +69,7 @@ const App = () => {
            <Route path="/SL-Roadster" element={<Slroadster/>} />
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
            <Route path="/Basket" element={<Basket/>} />
+           <Route path="/F" element={<Footer/>} />
       </Routes>
     </Router>
   )
