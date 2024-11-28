@@ -70,6 +70,7 @@ const App = () => {
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
            <Route path="/Basket" element={<Basket/>} />
            <Route path="/F" element={<Footer/>} />
+           <Route path="/H" element={<Header/>} />
       </Routes>
     </Router>
   )

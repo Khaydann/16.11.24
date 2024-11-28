@@ -32,7 +32,7 @@ const Header = () => {
 
         <div className="header-links">
           {localStorage.getItem("user") ? (
-            <button onClick={handleLogout} className="link logout-link">Log Out</button>
+            <button onClick={handleLogout} className="link logout logout-link">Log Out</button>
           ) : (
             <>
               <div className="header-login-signup">
