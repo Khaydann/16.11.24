@@ -30,8 +30,10 @@ import Clecabriolet from './assets/Pages/CLECabriolet/Clecabriolet'
 import Slroadster from './assets/Pages/SLRoadster/Slroadster'
 import Amggtccoupe from './assets/Pages/AMGGTCoupe/Amggtccoupe'
 import Basket from './assets/Pages/Basket/Basket'
-import Header from './assets/Components/Header/Header'
+
 import Footer from './assets/Components/Footer/Footer'
+import Payattention from './assets/Components/Carousel/Carousel'
+
 
 
 
@@ -70,7 +72,8 @@ const App = () => {
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
            <Route path="/Basket" element={<Basket/>} />
            <Route path="/F" element={<Footer/>} />
-           <Route path="/H" element={<Header/>} />
+           
+           
       </Routes>
     </Router>
   )
