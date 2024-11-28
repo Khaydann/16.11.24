@@ -33,6 +33,7 @@ import Basket from './assets/Pages/Basket/Basket'
 
 import Footer from './assets/Components/Footer/Footer'
 import Payattention from './assets/Components/Carousel/Carousel'
+import Header from './assets/Components/Header/Header'
 
 
 
@@ -57,7 +58,7 @@ const App = () => {
         <Route path="/Aksessuarlar" element={<Aksessuar/>} />
         <Route path="/Homepage" element={<Homepage/>} />
         <Route path="/Wishlist" element={<Wishlist/>} />
-        <Route path="/b" element={<Vclass/>} />
+        <Route path="/V-class" element={<Vclass/>} />
         <Route path="/Eqesedan" element={<Eqesedan/>} />
         <Route path="/A-class-hatchback" element={<Aclasshatchback/>} />
         <Route path="/C-Class-Sedan" element={<Classsedan/>} />
@@ -71,7 +72,7 @@ const App = () => {
            <Route path="/SL-Roadster" element={<Slroadster/>} />
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
            <Route path="/Basket" element={<Basket/>} />
-           <Route path="/F" element={<Footer/>} />
+           <Route path="/H" element={<Header/>} />
            
            
       </Routes>

@@ -1,6 +1,9 @@
-*{
+/* Global font */
+* {
   font-family: "Hind Siliguri", sans-serif;
 }
+
+/* Main header styles */
 .header-main {
   background-color: black;
   width: 100%;
@@ -31,6 +34,7 @@
   cursor: pointer;
 }
 
+/* Menu Icon */
 .menu-icon {
   display: none;
   font-size: 30px;
@@ -38,6 +42,7 @@
   cursor: pointer;
 }
 
+/* Header Links and Logout */
 .header-links {
   display: flex;
   align-items: center;
@@ -47,8 +52,8 @@
   display: flex;
   gap: 20px;
 }
-.logout{
 
+.logout {
   font-size: 18px;
   color: white;
   padding: 10px;
@@ -56,11 +61,13 @@
   border: 1px solid #444;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  &:hover{
+  
+  &:hover {
     background-color: white;
     color: black;
   }
 }
+
 .header-login-signup .link {
   font-size: 18px;
   color: white;
@@ -76,6 +83,7 @@
   color: black;
 }
 
+/* Property Navigation */
 .header-properity {
   margin-top: 20px;
   text-align: center;
@@ -102,12 +110,16 @@
   display: block;
 }
 
+/* Media Queries for responsiveness */
+
+/* Tablet screen size */
 @media (max-width: 960px) {
   .header-properity nav ul li a {
     font-size: 13px;
   }
 }
 
+/* Mobile screen size */
 @media (max-width: 600px) {
   .header-login-signup {
     display: none;
@@ -125,7 +137,7 @@
     top: 120px;
     right: 0;
     background-color: #1a1a1a;
-   z-index: 900;
+    z-index: 900;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -137,7 +149,6 @@
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
-    
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -159,7 +170,7 @@
     height: 220px;
     width: 190px;
     background-color: #1a1a1a;
-text-align: left;
+    text-align: left;
     flex-direction: column;
     padding: 20px;
     transform: translateX(-100%);
@@ -188,22 +199,76 @@ text-align: left;
   }
 }
 
+/* Adjust logo size on small screens */
 @media (max-width: 300px) {
   .header-logo img {
     width: 60px;
     height: 60px;
   }
 }
-* {
-  font-family: "Hind Siliguri", sans-serif;
+
+/* Font adjustments for submenu items */
+.submenu {
+  position: absolute;
+  top: 155px;
+  display: flex;
+  flex-direction: column;
+  border: #110202;
+  z-index: 23;
+  margin-left: 20px;
+  background-color: black;
 }
 
-.header-main, .header-top, .header-links, .header-properity, .dropdown-name {
-  font-family: "Hind Siliguri", sans-serif;
+.sub-submenu {
+  display: flex;
+  flex-direction: column;
 }
-p{
+
+.submenu-item {
+  position: relative;
+  padding: 10px;
+  color: white;
+  background-color: #070101;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.submenu-item:hover {
+  background-color: rgb(7, 0, 0);
+  color: white;
+}
+
+.sub-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 300px;
+  background-color: #000000;
+  // padding: 10px;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.submenu-item:hover .sub-submenu {
+  display: flex;
+}
+
+.sub-submenu a {
+  color: white;
+  padding: 10px;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.sub-submenu a:hover {
+  color: #bbb;
+}
+
+/* Styling for p and span tags inside dropdown */
+p {
   font-family: 'Roboto', sans-serif;
 }
-span{
+
+span {
   font-family: 'Roboto', sans-serif;
 }
