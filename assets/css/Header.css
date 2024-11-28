@@ -20,7 +20,7 @@
 .header-logo {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  width: 100%;
 }
 
 .header-logo img {
@@ -200,8 +200,9 @@
   flex-direction: column;
   border: #110202;
   z-index: 23;
-  margin-left: 20px;
+  margin-left: 14px;
   background-color: black;
+  border-radius: 10px;
 }
 
 .sub-submenu {
@@ -212,6 +213,7 @@
 .submenu-item {
   position: relative;
   padding: 10px;
+  border-radius: 10px;
   color: white;
   background-color: #070101;
   transition: background-color 0.3s ease, color 0.3s ease;

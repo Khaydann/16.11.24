@@ -13,7 +13,9 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [modelHover, setModelHover] = useState(false);
-  const [submenuHover, setSubmenuHover] = useState(null); // Change to track specific submenu
+  const [submenuHover, setSubmenuHover] = useState(null);
+  const [buyerHover, setBuyerHover] = useState(false); // Alıcılar üçün hover
+  const [serviceHover, setServiceHover] = useState(false); // Servis üçün hover
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -151,65 +153,22 @@ const Header = () => {
                     <a href="#">Yolsuzluq Avtomobilləri</a>
                     {submenuHover === "Yolsuzluq Avtomobilləri" && (
                       <div className="sub-submenu">
-                         <a onClick={() => navigate("/G-class")} href="#">
-                         G-class
+                        <a onClick={() => navigate("/G-class")} href="#">
+                          G-class
                         </a>
                         <a onClick={() => navigate("/EQB")} href="#">
                           EQB
                         </a>
-                       
-                        <a
-                          onClick={() => navigate("/EQA")}
-                          href="#"
-                        >
+                        <a onClick={() => navigate("/EQA")} href="#">
                           EQA
                         </a>
-                        <a
-                          onClick={() => navigate("/GLS")}
-                          href="#"
-                        >
+                        <a onClick={() => navigate("/GLS")} href="#">
                           GLS
                         </a>
                       </div>
                     )}
                   </div>
-                  <div
-                    className="submenu-item"
-                    onMouseEnter={() => setSubmenuHover("Kupe")}
-                    onMouseLeave={() => setSubmenuHover(null)}
-                  >
-                    <a href="#">Kupe</a>
-                    {submenuHover === "Kupe" && (
-                      <div className="sub-submenu">
-                        <a onClick={() => navigate("/AMG-GT-Coupé")} href="#">
-                        AMG GT Coupé
-                        </a>
-                        <a onClick={() => navigate("/CLA")} href="#">
-                          CLA
-                        </a>
-                       
-                        
-                      </div>
-                    )}
-                  </div>
-                  <div
-                    className="submenu-item"
-                    onMouseEnter={() => setSubmenuHover("Kabriolet")}
-                    onMouseLeave={() => setSubmenuHover(null)}
-                  >
-                    <a href="#">Sedan</a>
-                    {submenuHover === "Kabriolet" && (
-                      <div className="sub-submenu">
-                        <a onClick={() => navigate("/SL-Roadster")} href="#">
-                        SL Roadster
-                        </a>
-                        <a onClick={() => navigate("/CLE-Cabriolet")} href="#">
-                        CLE Cabriolet
-                        </a>
-                       
-                      </div>
-                    )}
-                  </div>
+                  {/* MPV */}
                   <div
                     className="submenu-item"
                     onMouseEnter={() => setSubmenuHover("MPV")}
@@ -219,24 +178,91 @@ const Header = () => {
                     {submenuHover === "MPV" && (
                       <div className="sub-submenu">
                         <a onClick={() => navigate("/V-class")} href="#">
-                         V-class
+                          V-class
                         </a>
-                       
+                      </div>
+                    )}
+                  </div>
+                  {/* Kupe */}
+                  <div
+                    className="submenu-item"
+                    onMouseEnter={() => setSubmenuHover("Kupe")}
+                    onMouseLeave={() => setSubmenuHover(null)}
+                  >
+                    <a href="#">Kupe</a>
+                    {submenuHover === "Kupe" && (
+                      <div className="sub-submenu">
+                        <a onClick={() => navigate("/AMG-GT-Coupé")} href="#">
+                          AMG GT Coupé
+                        </a>
+                        <a onClick={() => navigate("/CLA")} href="#">
+                          CLA
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                  {/* Kabriolet */}
+                  <div
+                    className="submenu-item"
+                    onMouseEnter={() => setSubmenuHover("Kabriolet")}
+                    onMouseLeave={() => setSubmenuHover(null)}
+                  >
+                    <a href="#">Kabriolet</a>
+                    {submenuHover === "Kabriolet" && (
+                      <div className="sub-submenu">
+                        <a onClick={() => navigate("/SL-Roadster")} href="#">
+                          SL Roadster
+                        </a>
+                        <a onClick={() => navigate("/CLE-Cabriolet")} href="#">
+                          CLE Cabriolet
+                        </a>
                       </div>
                     )}
                   </div>
                 </div>
               )}
             </li>
-            <li>
+            
+            {/* Alıcılar üçün submenu */}
+            <li
+              onMouseEnter={() => setBuyerHover(true)}
+              onMouseLeave={() => setBuyerHover(false)}
+            >
               <a href="#">Alıcılar üçün</a>
+              {buyerHover && (
+                <div className="submenu">
+                  <div className="submenu-item">
+                    <a href="#">Testdrayva yazılmaq</a>
+                  </div>
+                  <div className="submenu-item">
+                    <a href="#">Showroom siyahısı</a>
+                  </div>
+                  
+                </div>
+              )}
             </li>
-            <li>
+
+            {/* Servis üçün submenu */}
+            <li
+              onMouseEnter={() => setServiceHover(true)}
+              onMouseLeave={() => setServiceHover(false)}
+            >
               <a href="#">Servis</a>
+              {serviceHover && (
+                <div className="submenu">
+                  <div className="submenu-item">
+                    <a href="#">Aksessuarlar</a>
+                  </div>
+                  <div className="submenu-item">
+                    <a href="#">Servis paketler</a>
+                  </div>
+                  <div className="submenu-item">
+                    <a href="#">Orjinal hissələri</a>
+                  </div>
+                </div>
+              )}
             </li>
-            <li>
-              <a href="#">Bizim brendimiz</a>
-            </li>
+
           </ul>
         </nav>
       </div>
