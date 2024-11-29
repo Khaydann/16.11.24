@@ -51,17 +51,6 @@
 }
 
 /* Text Styling */
-.salam-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-}
-
 @media (max-width: 1200px) {
   /* Keep the layout the same as the original for larger screens */
   .st-main {

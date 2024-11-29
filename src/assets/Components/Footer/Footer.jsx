@@ -25,9 +25,7 @@ import { useNavigate } from 'react-router-dom'
                     <li>
                       <a href="">Test drayva yazılmaq</a>
                     </li>
-                    <li>
-                      <a onClick={()=>navigate("/Mövcud-təkliflər")}  href="">Mövcud təkliflər</a>
-                    </li>
+                  
                     <li>
                       <a  onClick={()=>navigate("/Showroom")} href="">Showroom siyahısı</a>
                     </li>
@@ -37,24 +35,18 @@ import { useNavigate } from 'react-router-dom'
                 <div className="footer-musteri">
                   <h3>Sahiblər üçün</h3>
                   <ul>
-                    <li>
-                      <a href="">Servisə yazılmaq</a>
-                    </li>
+                   
                     <li>
                       <a  onClick={()=>navigate("/Aksessuarlar")} href="">Aksessuarlar</a>
                     </li>
-                    <li>
-                      <a href="">Həyat tərz kolleksiyası</a>
-                    </li>
+                   
                     <li>
                       <a  onClick={()=>navigate("/Servis-paketler")} href="">Servis paketler</a>
                     </li>
                     <li>
                       <a  onClick={()=>navigate("/Orjinal-hisseler")} href="">Orjinal hissələr</a>
                     </li>
-                    <li>
-                      <a href="">Təlimat Kitabçası</a>
-                    </li>
+                  
                     
                   </ul>
                 </div>

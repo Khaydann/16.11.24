@@ -38,7 +38,7 @@ const ShoppingTools = () => {
         </div>
       </div>
       <div className="st-secondary2">
-        <div className="salam-text">Salam</div>
+       
         <img 
           src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_313,h_235,q_auto,c_fill,f_auto,fl_lossy/auto-client/92f98f8057bf443d10601960011bb50e/2.jpg" 
           alt="" 
