@@ -1,27 +1,21 @@
-@charset "UTF-8";
 .about-welcome {
   position: relative;
 }
-
 .about-welcome img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.about-text1 {
-  position: absolute;
-  top: 50%;
-  left: 30px; /* Soldan 30px margin */
-  transform: translateY(-50%); /* Mətni şaquli mərkəzləşdirir */
-  font-size: 24px;
-  color: white; /* Yazı rəngi */
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border-radius: 8px;
+.about-text2 {
+  padding: 10px;
+}
+.about-text2 .pa-h2 {
+  font-size: 2rem;
+}
+.about-text2 .hp-p1,
+.about-text2 .hp-p2 {
+  font-size: 1.2rem;
 }
 
 .about-picture {
@@ -29,6 +23,7 @@
   width: 100%;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 .about-picture img {
   width: 460px;
@@ -74,4 +69,68 @@
   width: 100%;
   height: 700px;
   border-radius: 8px;
+}
+
+@media (max-width: 960px) {
+  .about-picture {
+    gap: 15px;
+  }
+  .about-video-frame {
+    height: 500px;
+  }
+  .about-welcome img {
+    height: 150px;
+  }
+  .about-text2 .pa-h2 {
+    font-size: 1.8rem;
+  }
+  .about-text2 .hp-p1,
+  .about-text2 .hp-p2 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .about-picture {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-picture img {
+    width: 90%;
+    height: auto;
+  }
+  .about-video-frame {
+    height: 400px;
+  }
+  .about-welcome img {
+    height: 120px;
+  }
+  .about-text2 .pa-h2 {
+    font-size: 1.5rem;
+  }
+  .about-text2 .hp-p1,
+  .about-text2 .hp-p2 {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 300px) {
+  .about-picture img {
+    width: 100%;
+    height: auto;
+  }
+  .about-video-frame {
+    height: 300px;
+  }
+  .about-welcome img {
+    height: 100px;
+  }
+  .about-text2 .pa-h2 {
+    font-size: 1.2rem;
+  }
+  .about-text2 .hp-p1,
+  .about-text2 .hp-p2 {
+    font-size: 0.8rem;
+  }
+  .about-video {
+    margin: 15px;
+  }
 }

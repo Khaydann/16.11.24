@@ -50,24 +50,25 @@ const Header = () => {
         <div className="header-links">
           {user ? (
             <div className="logout-container">
-              <FontAwesomeIcon
-                icon={faUser}
-                className="user-icon"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              />
+              <div className="user-info-container">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="user-icon"
+                  onClick={() => setDropdownOpen(!dropdownOpen)} // İkona tıklananda dropdown açılır
+                />
+                {dropdownOpen && (
+                  <div className="dropdown-name">
+                    <p>İstifadəçi: {user.name}</p>
+                    <span>Balans: {user.budget} AZN</span>
+                  </div>
+                )}
+              </div>
               <button
                 onClick={handleLogout}
                 className="link logout logout-link"
               >
                 Log Out
               </button>
-
-              {dropdownOpen && (
-                <div className="dropdown-name">
-                  <p>İstifadəçi: {user.name}</p>
-                  <span>Balans: {user.budget} AZN</span>
-                </div>
-              )}
             </div>
           ) : (
             <div className="header-login-signup">
@@ -222,7 +223,7 @@ const Header = () => {
                 </div>
               )}
             </li>
-            
+
             {/* Alıcılar üçün submenu */}
             <li
               onMouseEnter={() => setBuyerHover(true)}
@@ -237,7 +238,6 @@ const Header = () => {
                   <div className="submenu-item">
                     <a href="#">Showroom siyahısı</a>
                   </div>
-                  
                 </div>
               )}
             </li>
@@ -262,7 +262,6 @@ const Header = () => {
                 </div>
               )}
             </li>
-
           </ul>
         </nav>
       </div>

@@ -34,7 +34,7 @@
   border: 1px solid white;
   position: absolute;
   left: 60px; /* Şəkilin sol tərəfi ilə uyğunlaşdırır */
-  top: 55%;
+  top: 65%;
 }
 .bigintro .bigintro-btn:hover {
   background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
@@ -43,4 +43,22 @@
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .bigintro-btn {
+    width: 30%;
+  }
+  .bigintro-btn p {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 300px) {
+  .bigintro-btn {
+    width: 30%;
+  }
+  .bigintro-btn p {
+    font-size: 4px;
+  }
 }

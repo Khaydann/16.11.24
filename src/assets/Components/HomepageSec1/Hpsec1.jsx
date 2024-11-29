@@ -18,8 +18,8 @@ const Hpsec1 = () => {
 <div className="hpsec1-text">  <h4 className="h4-hpsec1">Sizin üçün yaradılıb</h4>
 
 <div className="hpsec1-buttons">
-  <button onClick={()=>navigate("/Haqqımızda")} className="hpsec1-btn1">Haqqımızda</button>
-  <button  onClick={()=>navigate("/Bizimlə-əlaqə")} className="hpsec1-btn2">Əlaqə</button>
+  <button onClick={()=>navigate("/Haqqımızda")} className="hpsec1-btn1"><p>Haqqımızda</p></button>
+  <button  onClick={()=>navigate("/Bizimlə-əlaqə")} className="hpsec1-btn2"><p>Əlaqə</p></button>
 </div>
 </div>
 

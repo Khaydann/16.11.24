@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Global font */
 * {
   font-family: "Hind Siliguri", sans-serif;
@@ -19,8 +20,8 @@
 
 .header-logo {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start; /* Logo-nu solda yerləşdiririk */
+  width: 90%; /* Logo-nun eni */
 }
 
 .header-logo img {
@@ -51,6 +52,7 @@
 .header-login-signup {
   display: flex;
   gap: 20px;
+  width: 250px;
 }
 
 .logout {
@@ -181,6 +183,12 @@
     font-size: 18px;
     color: white;
   }
+  a {
+    font-size: 20px;
+  }
+  .dropdown-icon {
+    color: white;
+  }
   .header-properity ul li a:hover {
     color: #bbb;
   }
@@ -213,7 +221,6 @@
 .submenu-item {
   position: relative;
   padding: 10px;
-  border-radius: 10px;
   color: white;
   background-color: #070101;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -233,6 +240,37 @@
   background-color: #000000;
   display: none;
   transition: all 0.3s ease;
+}
+
+.logout {
+  width: 100px;
+}
+
+.dropdown-name {
+  background-color: white;
+  color: #070101;
+  padding: 10px;
+  position: absolute;
+  top: 100px;
+}
+
+p, span {
+  font-size: 20px;
+}
+
+.dropdown-name p, .dropdown-name span {
+  font-size: 20px;
+}
+
+.user-icon {
+  color: white;
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.logout-container {
+  display: flex;
+  align-items: center;
 }
 
 .submenu-item:hover .sub-submenu {
@@ -257,4 +295,10 @@ p {
 
 span {
   font-family: "Roboto", sans-serif;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: flex-end; /* Logoyu sağa hizalar */
+  width: 55%;
 }

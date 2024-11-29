@@ -73,3 +73,11 @@
 .pa-p{
     margin-bottom: 30px;
 }
+@media (max-width: 600px) {
+  .oh-image{ img {
+    display: block;
+    width: 100%;
+    height: 30px;
+    object-fit: cover;
+  }
+}}

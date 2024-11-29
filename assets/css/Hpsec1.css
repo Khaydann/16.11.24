@@ -81,12 +81,88 @@
   transition: 1s;
   border: 1px solid white;
 }
-
-.hpsec1-btn2:hover {
+.hpsec1-buttons .hpsec1-btn2:hover {
   background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
   border: 1px solid transparent;
   color: #333;
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .hpsec1-buttons {
+    flex-direction: row;
+    gap: 20px;
+    top: 87px;
+  }
+  .hpsec1-btn1, .hpsec1-btn2 {
+    width: 30%;
+  }
+  .hpsec1-btn1 p, .hpsec1-btn2 p {
+    font-size: 14px;
+  }
+  .hpsec1-text {
+    top: 25%;
+    left: 5px;
+    padding-left: 20px;
+  }
+  .h4-hpsec1 {
+    font-size: 3rem;
+  }
+  video {
+    height: 600px;
+  }
+}
+@media (max-width: 600px) {
+  .hpsec1-buttons {
+    flex-direction: column;
+    gap: 15px;
+    top: 70px;
+  }
+  .hpsec1-btn1, .hpsec1-btn2 {
+    width: 100%;
+    padding: 12px 20px;
+  }
+  .hpsec1-btn1 p, .hpsec1-btn2 p {
+    font-size: 11px;
+    text-align: center;
+  }
+  .hpsec1-text {
+    top: 20%;
+    left: 5px;
+    padding-left: 15px;
+  }
+  .h4-hpsec1 {
+    font-size: 2.5rem;
+  }
+  video {
+    height: 500px;
+  }
+}
+@media (max-width: 300px) {
+  .hpsec1-buttons {
+    flex-direction: column;
+    gap: 8px;
+    top: 40px;
+  }
+  .hpsec1-btn1, .hpsec1-btn2 {
+    width: 100%;
+    padding: 8px 12px;
+  }
+  .hpsec1-btn1 p, .hpsec1-btn2 p {
+    font-size: 8px;
+    margin: 0 auto;
+  }
+  .hpsec1-text {
+    top: 15%;
+    left: 5px;
+    padding-left: 10px;
+  }
+  .h4-hpsec1 {
+    font-size: 2rem;
+  }
+  video {
+    height: 400px;
+  }
 }

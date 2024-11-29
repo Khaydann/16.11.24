@@ -34,6 +34,7 @@ import Basket from './assets/Pages/Basket/Basket'
 import Footer from './assets/Components/Footer/Footer'
 import Payattention from './assets/Components/Carousel/Carousel'
 import Header from './assets/Components/Header/Header'
+import Hpsec1 from './assets/Components/HomepageSec1/Hpsec1'
 
 
 
@@ -72,7 +73,7 @@ const App = () => {
            <Route path="/SL-Roadster" element={<Slroadster/>} />
            <Route path="/AMG-GT-Coupé" element={<Amggtccoupe/>} />
            <Route path="/Basket" element={<Basket/>} />
-           <Route path="/H" element={<Header/>} />
+           <Route path="/H" element={<Hpsec1/>} />
            
            
       </Routes>

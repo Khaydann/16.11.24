@@ -9,7 +9,7 @@ const Bigintro = ({ image, text }) => {
         <img src={image} alt="Intro Image" className="bigintro-image" />
         <div className="bigintro-text">{text}</div>
         <button onClick={() => navigate("/Bizimlə-əlaqə")} className="bigintro-btn">
-          Müraciət edin
+        <p>  Müraciət edin</p>
         </button>
       </div>
     );

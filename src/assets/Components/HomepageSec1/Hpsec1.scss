@@ -14,17 +14,14 @@
 
 .hpsec1-photo {
     position: relative;
-
     overflow: hidden; 
-    video{
+
+    video {
         width: 100%;
         object-fit: cover;
         height: 740px;
     }
 }
-
-
-
 
 .hpsec1-text {
     position: absolute;
@@ -33,7 +30,7 @@
     transform: translateY(-50%);
     color: white;
     padding-left: 30px;
-    z-index: 2; 
+    z-index: 2;
 }
 
 .h4-hpsec1 {
@@ -56,8 +53,8 @@
     left: 10px;
     display: flex;
     gap: 20px;
-    z-index: 2; 
-    
+    z-index: 2;
+
     .hpsec1-btn1 {
         padding: 17px 25px;
         width: 30%;
@@ -88,13 +85,104 @@
         transition: 1s;
         border: 1px solid white;
     }
+
+    .hpsec1-btn2:hover {
+        background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
+        border: 1px solid transparent;
+        color: #333;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
 }
 
-.hpsec1-btn2:hover {
-    background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
-    border: 1px solid transparent;
-    color: #333;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+@media (max-width: 960px) {
+    .hpsec1-buttons {
+        flex-direction: row; // Keep buttons side-by-side at 960px
+        gap: 20px;
+        top: 87px;
+    }
+
+    .hpsec1-btn1, .hpsec1-btn2 {
+        p{
+            font-size: 14px;
+        }
+        width: 30%; // Keep button width same as before at 960px
+    }
+
+    .hpsec1-text {
+        top: 25%;
+        left: 5px;
+        padding-left: 20px;
+    }
+
+    .h4-hpsec1 {
+        font-size: 3rem;
+    }
+
+    video {
+        height: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hpsec1-buttons {
+        flex-direction: column; // Stack buttons vertically at 600px
+        gap: 15px;
+        top: 70px; // Adjust button positioning for smaller screens
+    }
+
+    .hpsec1-btn1, .hpsec1-btn2 {
+        width: 100%; // Make buttons full width when stacked
+       p{
+        font-size: 11px;
+        text-align: center;
+       }
+        padding: 12px 20px;
+    }
+
+    .hpsec1-text {
+        top: 20%;
+        left: 5px;
+        padding-left: 15px;
+    }
+
+    .h4-hpsec1 {
+        font-size: 2.5rem;
+    }
+
+    video {
+        height: 500px;
+    }
+}
+
+@media (max-width: 300px) {
+    .hpsec1-buttons {
+        flex-direction: column;
+        gap: 8px;
+        top: 40px;
+    }
+
+    .hpsec1-btn1, .hpsec1-btn2 {
+        width: 100%;
+      p{
+        font-size: 8px;
+        margin: 0 auto;
+      }
+        padding: 8px 12px;
+    }
+
+    .hpsec1-text {
+        top: 15%;
+        left: 5px;
+        padding-left: 10px;
+    }
+
+    .h4-hpsec1 {
+        font-size: 2rem;
+    }
+
+    video {
+        height: 400px;
+    }
 }
