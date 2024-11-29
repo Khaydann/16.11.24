@@ -1,0 +1,21 @@
+.onload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Şəkil və animasiyanı mərkəzə düz */
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  

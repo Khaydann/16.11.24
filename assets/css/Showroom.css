@@ -1,6 +1,52 @@
+@charset "UTF-8";
 .showroom-cards {
   display: flex;
-  margin: 30px;
+  flex-wrap: wrap; /* Kartların sıralanmasına icazə verir */
+  gap: 30px; /* Kartlar arasındakı boşluq */
+  justify-content: center; /* Kartları mərkəzə yerləşdiririk */
+  margin-top: 20px;
+}
+
+.showroom-card {
+  width: 300px; /* Hər iki kartın eyni ölçüdə olmasını təmin edirik */
+  height: 400px; /* Kartın ümumi hündürlüyü */
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  /* Şəkil tərzi */
+}
+.showroom-card:hover {
+  transform: scale(1.05); /* Hover effekti */
+}
+.showroom-card img {
   width: 100%;
-  justify-content: center;
+  height: 60%; /* Şəkilin hündürlüyü */
+  object-fit: cover; /* Şəkilin kartın ölçüsünə uyğun gəlməsi */
+}
+.showroom-card .showroom-card-text {
+  padding: 10px;
+  background-color: white;
+}
+.showroom-card .showroom-card-text h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333; /* Başlıq üçün rəng */
+}
+.showroom-card .showroom-card-text p {
+  font-size: 14px;
+  color: gray;
+}
+.showroom-card .showroom-card-text span {
+  font-size: 14px;
+  color: #0073e6;
+}
+
+/* 992px-dən kiçik ekranlar üçün */
+@media (max-width: 992px) {
+  .showroom-card {
+    width: 100%; /* Kartların eni 100% olacaq */
+    margin-bottom: 20px; /* Kartlar arasında boşluq */
+  }
 }

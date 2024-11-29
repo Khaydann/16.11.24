@@ -201,17 +201,7 @@ const Signup = () => {
 
         <div className="about">
           <div className="social-media">
-            <div className="icons">
-              <div className="facebook social">
-                <FaFacebookF className="fb media" />
-              </div>
-              <div className="twitter social">
-                <FaTwitter className="tw media" />
-              </div>
-              <div className="google social">
-                <FaGoogle className="g media" />
-              </div>
-            </div>
+           
             <div className="sign">
               <span onClick={()=>navigate("./../Pages/Homepage")}> I'm already a member Log In</span>
               {/* <Link href="./../../Pages/login"></Link> */}

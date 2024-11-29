@@ -5,7 +5,10 @@ import { LiaWarehouseSolid } from "react-icons/lia";
 import { FaHeart } from "react-icons/fa";
 import './Wishlist.scss'
 import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 const Wishlist = () => {
+    const navigate=useNavigate()
     const [wishlist, setWishlist] = useState([]);
 
     useEffect(() => {
@@ -91,9 +94,9 @@ const Wishlist = () => {
             <section className='favorites-section'>
 
                 <div className="favorite-top">
-                    <span style={{ color: "#232d40", fontSize: "28px" }}>Wishlist</span>
-                    <button style={{width:"340px",height:"55px",borderRadius:"15px"}} className='addToBasket' onClick={addAllToCart}>
-                        <MdOutlineShoppingCart style={{ fontSize: "23px" }} /> Bütün məhsulları səbətə əlavə et
+                    <span onClick={()=>navigate("/Basket")} style={{ color: "#232d40", fontSize: "20px" }}> <i class="fa-solid fa-cart-shopping"></i>  Səbətə geri dön</span>
+                    <button style={{width:"400px",height:"60px",borderRadius:"15px"}} className='addToBasket hpsec1-btn2' onClick={addAllToCart}>
+                        <MdOutlineShoppingCart  style={{ fontSize: "23px" }} /> <p>Bütün məhsulları səbətə əlavə et</p>
                     </button>
                 </div>
 
@@ -110,16 +113,15 @@ const Wishlist = () => {
                                     <h4>{product.name}</h4>
                                 </div>
                                 <div className='product-price'>
-                                    <span><LiaWarehouseSolid style={{ fontSize: "15px" }} /> Stokda var</span>
-                                    <FaHeart style={{ color: "red", fontSize: "22px", marginLeft: "1.7rem", cursor: "pointer" }} onClick={() => removeFromWishlist(product.id)} />
-                                    <div>
-                                        <span style={{ color: "#1743df", background: "rgba(23,67,223,.07)" }}> Faizsiz təklif </span>
-                                    </div>
+                                    
+                                    <FaHeart style={{  marginBottom:"10px",marginLeft:"4px",  color: "red", fontSize: "22px", cursor: "pointer" }} onClick={() => removeFromWishlist(product.id)} />
+                                   
                                     <div>
                                         <p className='new-price'>{product.price} AZN</p>
                                     </div>
-                                    <button onClick={() => addToCart(product)}>
-                                        <MdOutlineShoppingCart style={{ fontSize: "25px" }} /> Səbətə əlavə et
+                                    <button className='addbasket hpsec1-btn2' onClick={() => addToCart(product)}>
+                                        <MdOutlineShoppingCart style={{ fontSize: "25px" }} /> 
+                                        <p>Səbətə əlavə et</p>
                                     </button>
                                 </div>
                             </div>
@@ -127,6 +129,7 @@ const Wishlist = () => {
                     ))
                 )}
             </section>
+            <Footer/>
         </div>
     );
 };

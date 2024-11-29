@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GoDotFill } from 'react-icons/go';
 import './Basket.scss'
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const Basket = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -79,12 +82,14 @@ const totalPrice = cartItems.reduce((total, item) => {
   }
   return total;
 }, 0);
+const navigate=useNavigate()
 
     return (
         <div>
+            <Header/>
             <section className="basket-section">
                 <ul className="breadcrumb">
-                    <li><a href=""><GoDotFill /> Səbət </a></li>
+                    <li><a  onClick={()=>navigate("/Sevimlilər")} className="fav-basket" href=""><i  onClick={()=>navigate("/Sevimlilər")}  class="fa-solid fav fa-heart"></i> Sevimlilərə bax </a></li>
                 </ul>
 
                 <div className="cart-container">
@@ -117,16 +122,16 @@ const totalPrice = cartItems.reduce((total, item) => {
                     <div className="cart-summary">
                         <h3>Səbətdəki məhsullar</h3>
                         <div className="summary-details">
-                            <p>Məhsulların qiyməti: {totalPrice} AZN</p>
-                            <p>Endirim: 0 AZN</p>
+                           
                             <p><strong>Toplam qiymət:</strong> {totalPrice} AZN</p>
                         </div>
-                        <button className="checkout-btn">Sifarişi rəsmiləşdir</button>
+                        <button className="checkout-btn hpsec1-btn2">Sifarişi tamamla</button>
                     </div>
                 </div>
 
                 
             </section>
+            <Footer/>
         </div>
     );
 };

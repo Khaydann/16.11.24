@@ -47,4 +47,13 @@
       }
     }
   }
-  
+  @media (max-width: 992px) {
+    .babek-container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+
+

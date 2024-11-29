@@ -54,8 +54,8 @@
   z-index: 2;
 }
 .hpsec1-buttons .hpsec1-btn1 {
-  padding: 17px 25px;
-  width: 30%;
+  padding: 17px 25px !important;
+  width: 30% !important;
   border-radius: 30px;
   background-color: #014881;
   font-weight: bold;
@@ -63,6 +63,9 @@
   font-size: 17px;
   border: none;
   transition: 1s;
+  height: 66px;
+  position: relative;
+  top: 21px;
 }
 .hpsec1-buttons .hpsec1-btn1:hover {
   background: linear-gradient(45deg, #0288d1, #014881);
@@ -71,8 +74,8 @@
   cursor: pointer;
 }
 .hpsec1-buttons .hpsec1-btn2 {
-  padding: 17px 25px;
-  width: 25%;
+  padding: 17px 25px !important;
+  width: 25% !important;
   border-radius: 30px;
   background-color: transparent;
   font-weight: bold;
@@ -95,6 +98,10 @@
     flex-direction: row;
     gap: 20px;
     top: 87px;
+  }
+  .hpsec1-btn1 {
+    position: relative;
+    top: 15px;
   }
   .hpsec1-btn1, .hpsec1-btn2 {
     width: 30%;

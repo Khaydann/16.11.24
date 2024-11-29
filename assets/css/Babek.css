@@ -42,3 +42,10 @@
   height: 300px;
   border: 0;
 }
+
+@media (max-width: 992px) {
+  .babek-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

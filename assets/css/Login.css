@@ -1,0 +1,25 @@
+.card-Section {
+  height: px;
+}
+.card-Section video {
+  height: 100vh;
+}
+
+.card {
+  position: relative;
+  top: 120px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 600px;
+}
+
+.user-name span {
+  color: white !important;
+}
+
+.forgot button {
+  width: 70%;
+  display: inline;
+  transition: all 10s ease;
+  opacity: 0.8;
+  background: linear-gradient(to right, #140b0b, #2b1cad) !important;
+}

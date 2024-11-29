@@ -178,17 +178,8 @@ const Login = () => {
         
         <div className="about">
           <div className="social-media">
-            <div className="icons">
-              <div className="facebook social">
-                <FaFacebookF className="fb media" />
-              </div>
-              <div className="twitter social">
-                <FaTwitter className="tw media" />
-              </div>
-              <div className="google social">
-                <FaGoogle className="g media" />
-              </div>
-            </div>
+          
+          
             <div className="sign">
               <span onClick={()=>navigate("/SignUp")}>Or Sign Up</span>
             
