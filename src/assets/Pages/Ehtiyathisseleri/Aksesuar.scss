@@ -44,4 +44,10 @@
     color: #999;
     grid-column: 1 / -1;
   }
+  @media (max-width: 992px) {
+    .card-akses{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
   

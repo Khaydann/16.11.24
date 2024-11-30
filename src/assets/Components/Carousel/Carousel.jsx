@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './Carousel.scss';  // Make sure your SCSS file is properly imported
+import './Carousel.scss'; 
 import { Pagination } from 'swiper/modules';
 
 const Payattention = ({ images, text, note }) => {
@@ -20,16 +20,16 @@ const Payattention = ({ images, text, note }) => {
         className="mySwiper"
         breakpoints={{
           1200: {
-            slidesPerView: 3.5, // Shows 3.5 slides per view for screens 1200px and above
+            slidesPerView: 3.5,
           },
           960: {
-            slidesPerView: 2.5, // Shows 2.5 slides per view for screens 960px and below
+            slidesPerView: 2.5,
           },
           600: {
-            slidesPerView: 2, // Shows 2 slides per view for screens 600px and below
+            slidesPerView: 2, 
           },
           300: {
-            slidesPerView: 1, // Shows 1 slide per view for screens 300px and below
+            slidesPerView: 1, 
           },
         }}
       >

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Contact.scss';
 
 const Contact = ({ images }) => {
-  const [selectedBranch, setSelectedBranch] = useState(""); // Seçilen filial
+  const [selectedBranch, setSelectedBranch] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -11,12 +11,11 @@ const Contact = ({ images }) => {
     message: "",
   });
 
-  // Filial seçimi dəyişdikdə state yenilənir
+
   const handleBranchChange = (e) => {
     setSelectedBranch(e.target.value);
   };
 
-  // Input sahələrini dəyişmək üçün handleInputChange funksiyası
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({

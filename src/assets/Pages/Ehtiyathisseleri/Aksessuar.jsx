@@ -107,7 +107,7 @@ const Aksessuar = () => {
           )}
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

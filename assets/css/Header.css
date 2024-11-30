@@ -1,10 +1,8 @@
 @charset "UTF-8";
-/* Global font */
 * {
   font-family: "Hind Siliguri", sans-serif;
 }
 
-/* Main header styles */
 .header-main {
   background-color: black;
   width: 100%;
@@ -20,8 +18,8 @@
 
 .header-logo {
   display: flex;
-  justify-content: flex-start; /* Logo-nu solda yerləşdiririk */
-  width: 90%; /* Logo-nun eni */
+  justify-content: flex-start;
+  width: 90%;
 }
 
 .header-logo img {
@@ -193,14 +191,12 @@
     color: #bbb;
   }
 }
-/* Adjust logo size on small screens */
 @media (max-width: 300px) {
   .header-logo img {
     width: 60px;
     height: 60px;
   }
 }
-/* Font adjustments for submenu items */
 .submenu {
   position: absolute;
   top: 155px;

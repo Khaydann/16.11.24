@@ -45,10 +45,7 @@ Mercedes-Benz markalı avtomobillər üçün nəzərdə tutulan xidmət hər zam
   </div>
 </div>
 
-<h2 className="oh-h2">Orijinal görünür: saxta hissələrin olmasına diqqət edin.</h2>  
-      <p className="oh-p">Mercedes-Benz xidmət partnyorunuz sizi saxta məhsullardan qoruyur. Saxta hissələr çox vaxt aldadıcı dərəcədə orijinal görünür, hətta ekspertlər belə onları ilk baxışdan asanlıqla müəyyən edə bilmirlər.</p>
-       
-   <ShoppingTools/>
+
    <Footer/>
     </div>
   )

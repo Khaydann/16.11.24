@@ -37,8 +37,8 @@ const EQA = () => {
             <Header />
             <Bigcarousel slides={slides} />
             <Intex intImage={intImage} exImage={exImage} />
-           
-            <Contact images={["//d2638j3z8ek976.cloudfront.net/global-css-files/20240730-073037/images/placeholders/jITe62j1db.jpg"]} />
+         <br />
+            <Contact images={["https://images.netdirector.co.uk/gforces-auto/image/upload/w_1349,h_759,q_auto,c_fill,f_auto,fl_lossy/auto-client/89d86c14772ba14096addeaad2e2e9f9/eqssuv_2_.png"]} />
             <Footer />
         </div>
     );

@@ -10,17 +10,19 @@ const Intex = ({ intImage, exImage }) => {
       <div className="button-container">
         {/* Int düyməsi */}
         <button
-          className={`switch-button ${selected === "int" ? "active" : ""}`}
+        id="int-button"
+          className={`switch-button int-button ${selected === "int" ? "active" : ""}`}
           onClick={() => setSelected("int")}
         >
-          Int
+          Interiyer
         </button>
         {/* Ex düyməsi */}
         <button
+        id="ex-button"
           className={`switch-button ${selected === "ex" ? "active" : ""}`}
           onClick={() => setSelected("ex")}
         >
-          Ex
+        Eksteryer
         </button>
       </div>
       {/* Şəkil */}

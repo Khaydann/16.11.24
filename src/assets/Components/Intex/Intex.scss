@@ -4,6 +4,10 @@
       justify-content: flex-start;
       gap: 15px;
       margin-bottom: 20px;
+   
+    }
+    #int-button, #ex-button{
+      border-radius: 10px;
     }
   
     .switch-button {
@@ -34,4 +38,27 @@
       }
     }
   }
+  .intex-container{
+    flex-direction: column;
+    margin-top: 30px;
+    display: flex;
+  align-items: center;
+    width: 100%;
   
+  }
+#int-button{
+    &:hover{
+      background-color: #ffffff;
+      color: black;
+      scale: 1.1;
+      border-radius: 10px;
+    }
+  }
+  #ex-button{
+    &:hover{
+   background-color: #333;
+      color: #fff;
+      scale: 1.1;
+      border-radius: 10px;
+    }
+  }

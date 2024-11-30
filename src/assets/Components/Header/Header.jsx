@@ -14,8 +14,8 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [modelHover, setModelHover] = useState(false);
   const [submenuHover, setSubmenuHover] = useState(null);
-  const [buyerHover, setBuyerHover] = useState(false); // Alıcılar üçün hover
-  const [serviceHover, setServiceHover] = useState(false); // Servis üçün hover
+  const [buyerHover, setBuyerHover] = useState(false); 
+  const [serviceHover, setServiceHover] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Header = () => {
                 <FontAwesomeIcon
                   icon={faUser}
                   className="user-icon"
-                  onClick={() => setDropdownOpen(!dropdownOpen)} // İkona tıklananda dropdown açılır
+                  onClick={() => setDropdownOpen(!dropdownOpen)} 
                 />
                 {dropdownOpen && (
                   <div className="dropdown-name">
@@ -233,7 +233,7 @@ const Header = () => {
               {buyerHover && (
                 <div className="submenu">
                   <div className="submenu-item">
-                    <a href="#">Testdrayva yazılmaq</a>
+                    <a href="#">Bizimlə Əlaqə</a>
                   </div>
                   <div className="submenu-item">
                     <a href="#">Showroom siyahısı</a>
@@ -251,13 +251,13 @@ const Header = () => {
               {serviceHover && (
                 <div className="submenu">
                   <div className="submenu-item">
-                    <a href="#">Aksessuarlar</a>
+                    <a  onClick={() => navigate("/Aksessuarlar")}href="#">Aksessuarlar</a>
                   </div>
                   <div className="submenu-item">
-                    <a href="#">Servis paketler</a>
+                    <a   onClick={() => navigate("/Servis-paketler")} href="#">Servis paketler</a>
                   </div>
                   <div className="submenu-item">
-                    <a href="#">Orjinal hissələri</a>
+                    <a onClick={() => navigate("/Orjinal-hisseler")} href="#">Orjinal hissələri</a>
                   </div>
                 </div>
               )}

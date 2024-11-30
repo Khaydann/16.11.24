@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^6.1.8",
     "@mui/joy": "^5.0.0-beta.48",
-    "@mui/material": "^6.1.8",
+    "@mui/material": "^6.1.9",
     "add": "^2.0.6",
     "axios": "^1.7.7",
     "formik": "^2.4.6",

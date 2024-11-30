@@ -1,50 +1,55 @@
-@charset "UTF-8";
-.card {
-  border: 1px solid #d3d3d3; /* Boz rəngdə border */
+.card-akses {
+  border: 1px solid #d3d3d3;
   border-radius: 8px;
   overflow: hidden;
-  width: 300px; /* Lazımi ölçü təyin edin */
+  width: 300px;
   margin: 20px auto;
   background-color: #fff;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Keçid effekti */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kölgə effekti */
-  transform: scale(1.02); /* Azca böyümə effekti */
-  cursor: pointer; /* Əl işarəsi */
+
+.card-akses:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  cursor: pointer;
 }
-.card .card-images {
+
+.card-akses .card-images {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.card .card-images .card-image {
+
+.card-akses .card-images .card-image {
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
   border-radius: 4px;
 }
-.card .card-texts {
+
+.card-akses .card-texts {
   padding: 15px;
-  background-color: #fff; /* Ağ fon */
+  background-color: #fff;
   text-align: left;
 }
-.card .card-texts .card-text {
+
+.card-akses .card-texts .card-text {
   margin: 5px 0;
-  font-size: 17px; /* Böyük şrift ölçüsü */
-  color: #333; /* Tünd boz rəng */
-}
-.card .card-texts .card-span {
-  font-weight: 400;
-  padding: 10px 0; /* Yuxarı-aşağı boşluq */
-  font-size: 20px; /* Böyük şrift */
-  color: #333; /* Tünd boz */
-  display: block; /* Tam sətir */
+  font-size: 17px;
+  color: #333;
 }
 
-.card {
-  position: relative; /* Yuxarı sağ küncdə ikon əlavə etmək üçün */
+.card-akses .card-texts .card-span {
+  font-weight: 400;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #333;
+  display: block;
+}
+
+.card-akses {
+  position: relative;
 }
 
 .card-heart-icon {
@@ -53,5 +58,12 @@
   right: 10px;
   font-size: 20px;
   cursor: pointer;
-  transition: color 0.3s ease; /* Rəng dəyişikliyi üçün hamar keçid */
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .card-akses {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

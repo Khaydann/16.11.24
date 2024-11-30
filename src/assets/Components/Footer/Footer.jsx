@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
         const scrollToTop = () => {
             window.scrollTo({
               top: 0,
-              behavior: 'smooth',  // Smooth scroll
+              behavior: 'smooth',  
             });
           };
         return (

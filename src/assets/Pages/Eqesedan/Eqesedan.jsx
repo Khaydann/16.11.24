@@ -5,6 +5,7 @@ import Bigcarousel from '../../Components/Bigcarousel/Bigcarousel';
 import Header from '../../Components/Header/Header';
 import Intex from '../../Components/Intex/Intex';
 import Footer from '../../Components/Footer/Footer';
+import Contact from '../../Components/Contact/Contact';
 
 const Eqesedan = () => {
     const [slides, setSlides] = useState([]); // Şəkilləri saxlamaq üçün state
@@ -47,6 +48,8 @@ const Eqesedan = () => {
             <Header /> {/* Header komponenti */}
             <Bigcarousel slides={slides} /> {/* Şəkilləri göstərən komponent */}
             <Intex intImage={intImage} exImage={exImage} /> {/* İç və çöl görünüş */}
+            <br />
+            <Contact images={["https://images.netdirector.co.uk/gforces-auto/image/upload/w_1349,h_759,q_auto,c_fill,f_auto,fl_lossy/auto-client/89d86c14772ba14096addeaad2e2e9f9/eqssuv_2_.png"]} />
             <Footer /> {/* Footer komponenti */}
         </div>
     );

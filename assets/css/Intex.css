@@ -4,6 +4,9 @@
   gap: 15px;
   margin-bottom: 20px;
 }
+.intex-container #int-button, .intex-container #ex-button {
+  border-radius: 10px;
+}
 .intex-container .switch-button {
   padding: 10px 20px;
   font-size: 16px;
@@ -25,4 +28,26 @@
   max-width: 70%;
   height: 500px;
   object-fit: contain;
+}
+
+.intex-container {
+  flex-direction: column;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#int-button:hover {
+  background-color: #ffffff;
+  color: black;
+  scale: 1.1;
+  border-radius: 10px;
+}
+
+#ex-button:hover {
+  background-color: #333;
+  color: #fff;
+  scale: 1.1;
+  border-radius: 10px;
 }

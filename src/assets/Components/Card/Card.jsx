@@ -3,9 +3,9 @@ import "./Card.scss";
 
 const Card = ({ images, texts, span, onAddToCart, id }) => {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [quantity, setQuantity] = useState(1); // Məhsul miqdarı
+  const [quantity, setQuantity] = useState(1); 
 
-  // Komponent yükləndikdə wishlist-də olub-olmaması yoxlanılır
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.wishlist) {
@@ -47,49 +47,46 @@ useEffect(() => {
   const handleFavoriteClick = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
-      alert("Zəhmət olmasa, daxil olun!"); // İstifadəçi yoxdur
+      alert("Zəhmət olmasa, daxil olun!"); 
       return;
     }
 
     let wishlist = user.wishlist || [];
     const cardData = {
-      id, // Məhsulun unikal ID-si
-      name: texts?.[0] || "Naməlum Məhsul", // Məhsul adı
-      price: parseFloat(span?.[0]) || 0, // Məhsul qiyməti
-      img: images?.[0] || "", // Məhsul şəkli
+      id, 
+      name: texts?.[0] || "Naməlum Məhsul", 
+      price: parseFloat(span?.[0]) || 0, 
+      img: images?.[0] || "", 
     };
 
     if (isFavorite) {
-      // Məhsulu wishlist-dən sil
+  
       wishlist = wishlist.filter((item) => item.id !== id);
-      alert("Wishlist-dən çıxarıldı!");
+    
     } else {
-      // Məhsulu wishlist-ə əlavə et
+    
       if (!wishlist.some((item) => item.id === id)) {
         wishlist.push(cardData);
       }
     }
 
-    // Yeni istifadəçi obyektini yarat və localStorage-da saxla
+ 
     const updatedUser = { ...user, wishlist };
     localStorage.setItem("user", JSON.stringify(updatedUser));
 
-    // `isFavorite` vəziyyətini yenilə
-    setIsFavorite(!isFavorite); // isFavorite vəziyyətini dəyişdiririk
+    setIsFavorite(!isFavorite);
 
-    if (!isFavorite) {
-      alert("Wishlist-ə əlavə edildi!"); // Yalnız əlavə edildikdə xəbərdarlıq göstəririk
-    }
+  
   };
   const handleAddToCart = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
-      alert("Zəhmət olmasa, daxil olun!"); // İstifadəçi yoxdur
+      alert("Zəhmət olmasa, daxil olun!"); 
       return;
     }
 
     let cart = user.cart || [];
-    const price = parseFloat(span?.[0]) || 0; // Qiyməti burdan alırıq
+    const price = parseFloat(span?.[0]) || 0;
   const total = price * quantity;
     const cartItem = {
       id,
@@ -104,10 +101,10 @@ useEffect(() => {
       cart[existingItemIndex].quantity += quantity;
       cart[existingItemIndex].total = cart[existingItemIndex].quantity * price;
 
-      alert("Səbətdə məhsulun miqdarı artırıldı!");
+  
     } else {
       cart.push(cartItem);
-      alert("Məhsul səbətə əlavə edildi!");
+    
     }
     const updatedUser = { ...user, cart };
     localStorage.setItem("user", JSON.stringify(updatedUser));
@@ -121,7 +118,7 @@ useEffect(() => {
   const existingItemIndex = cart.findIndex((item) => item.id === id);
 
   if (existingItemIndex !== -1) {
-    // Məhsul səbətdə varsa, miqdarı artırırıq
+  
     cart[existingItemIndex].quantity += 1;
     cart[existingItemIndex].total = cart[existingItemIndex].quantity * cart[existingItemIndex].price;
 
@@ -138,7 +135,7 @@ useEffect(() => {
   const existingItemIndex = cart.findIndex((item) => item.id === id);
 
   if (existingItemIndex !== -1 && cart[existingItemIndex].quantity > 1) {
-    // Məhsul səbətdə varsa və miqdar 1-dən böyükdürsə, miqdarı azaldırıq
+  
     cart[existingItemIndex].quantity -= 1;
     cart[existingItemIndex].total = cart[existingItemIndex].quantity * cart[existingItemIndex].price;
 
@@ -147,8 +144,8 @@ useEffect(() => {
   }
   };
   return (
-    <div className="card">
-      {/* Yuxarı sağ küncdə ürək ikonu */}
+    <div className="card-akses">
+     
       <div className="card-heart-icon" onClick={handleFavoriteClick}>
         <i
           className={`fa-heart ${isFavorite ? "fa-solid" : "fa-regular"}`}
@@ -187,7 +184,7 @@ useEffect(() => {
             onClick={decreaseQuantity}
             style={{
               padding: "5px 10px",
-              backgroundColor: "#FF6347",
+              backgroundColor: "#000",
               color: "#fff",
               border: "none",
               borderRadius: "5px",
@@ -203,7 +200,7 @@ useEffect(() => {
             onClick={increaseQuantity}
             style={{
               padding: "5px 10px",
-              backgroundColor: "#32CD32",
+              backgroundColor: "#333",
               color: "#fff",
               border: "none",
               borderRadius: "5px",
@@ -213,18 +210,19 @@ useEffect(() => {
             +
           </button>
         </div>
-        {/* Səbətə əlavə et düyməsi */}
+       
         <button
           onClick={handleAddToCart}
           style={{
             marginTop: "10px",
             padding: "10px 15px",
-            backgroundColor: "#007BFF",
+            backgroundColor: "black",
             color: "#fff",
             border: "none",
             borderRadius: "5px",
             cursor: "pointer",
             fontSize: "14px",
+            
           }}
         >
           Səbətə əlavə et
