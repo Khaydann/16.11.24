@@ -128,6 +128,11 @@
     display: none;
   }
 
+  .header-logo img {
+  display: none;
+  }
+  
+
   .dropdown-icon {
     display: block;
     font-size: 25px;
@@ -135,6 +140,7 @@
     cursor: pointer;
     position: relative;
     left: 95px;
+    top: 12px;
   }
 
   .dropdown-menu {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Contact.scss';
 
 const Contact = ({ images }) => {
@@ -10,7 +11,8 @@ const Contact = ({ images }) => {
     phone: "",
     message: "",
   });
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
   const handleBranchChange = (e) => {
     setSelectedBranch(e.target.value);
@@ -24,14 +26,45 @@ const Contact = ({ images }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+
+    const dataToSend = {
+      ...formData,
+      branch: selectedBranch,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://6744c25db4e2e04abea38787.mockapi.io/contact",
+        dataToSend
+      );
+
+      console.log("Cavab:", response.data);
+      setResponseMessage("Məlumat uğurla göndərildi!");
+      setFormData({
+        name: "",
+        surname: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setSelectedBranch("");
+    } catch (error) {
+      console.error("Xəta:", error);
+      setResponseMessage("Göndəriş zamanı xəta baş verdi!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="contact-container">
-      <div className="contact-background" style={{ backgroundImage: `url(${images[0]})` }}>
+      <div
+        className="contact-background"
+        style={{ backgroundImage: `url(${images[0]})` }}
+      >
         <div className="contact-content">
           <div className="contact-left">
             <h2>Bizimlə Əlaqə</h2>
@@ -48,10 +81,15 @@ const Contact = ({ images }) => {
                     value={selectedBranch}
                     onChange={handleBranchChange}
                     className="contact-select"
+                    required
                   >
                     <option value="">Filial seçin</option>
-                    <option value="Automobile Center Absheron LLC">Automobile Center Absheron LLC</option>
-                    <option value="AutoStar Kaukasus GmbH Azerbaijan LLC">AutoStar Kaukasus GmbH Azerbaijan LLC</option>
+                    <option value="Automobile Center Absheron LLC">
+                      Automobile Center Absheron LLC
+                    </option>
+                    <option value="AutoStar Kaukasus GmbH Azerbaijan LLC">
+                      AutoStar Kaukasus GmbH Azerbaijan LLC
+                    </option>
                   </select>
                 </div>
                 <div className="contact-form-group">
@@ -117,7 +155,10 @@ const Contact = ({ images }) => {
                     className="contact-textarea"
                   ></textarea>
                 </div>
-                <button className="contact-button" type="submit">Göndər</button>
+                <button className="contact-button" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Göndərilir..." : "Göndər"}
+                </button>
+                {responseMessage && <p>{responseMessage}</p>}
               </form>
             </div>
           </div>

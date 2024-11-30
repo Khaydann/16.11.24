@@ -16,7 +16,7 @@ import Orjinalhisseler from './assets/Pages/Orjinalhisseler/Orjinalhisseler';
 import Login from './assets/Components/Login/Login';
 import Signup from './assets/Components/Signup/Signup';
 import Aksessuar from './assets/Pages/Ehtiyathisseleri/Aksessuar';
-
+import Admin from './assets/Pages/Admin/Adminpage'
 import Vclass from './assets/Pages/Vclass/Vclass';
 import Wishlist from './assets/Pages/Wishlist/Wishlist';
 import Eqesedan from './assets/Pages/Eqesedan/Eqesedan';
@@ -85,7 +85,7 @@ const App = () => {
         <Route path="/SL-Roadster" element={<Slroadster />} />
         <Route path="/AMG-GT-Coupé" element={<Amggtccoupe />} />
         <Route path="/Basket" element={<Basket />} />
-        <Route path="/Bt"  element ={<Header/>}/>
+        <Route path="/Admin"  element ={<Admin/>}/>
       </Routes>
     </Router>
   );
