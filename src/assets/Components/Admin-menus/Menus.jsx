@@ -1,12 +1,11 @@
 "use client";
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Box from "@mui/joy/Box";
 import ListItemDecorator from "@mui/joy/ListItemDecorator";
 import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab, { tabClasses } from "@mui/joy/Tab";
-import { TiDelete } from "react-icons/ti";
 import Button from "@mui/joy/Button";
 import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
@@ -14,30 +13,28 @@ import Input from "@mui/joy/Input";
 import Modal from "@mui/joy/Modal";
 import ModalDialog from "@mui/joy/ModalDialog";
 import DialogTitle from "@mui/joy/DialogTitle";
-import DialogContent from "@mui/joy/DialogContent";
 import Stack from "@mui/joy/Stack";
-import Add from "@mui/icons-material/Add";
 import Typography from "@mui/joy/Typography";
 
 const OurMenuTab = () => {
-  const [index, setIndex] = React.useState(0);
-  const colors = ["primary", "danger", "success", "warning"];
-  const [products, setProducts] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [open, setOpen] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState({
+  const [index, setIndex] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [createModalOpen, setCreateModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState({
     id: "",
     name: "",
-
     price: "",
-   
     img: "",
   });
 
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar");
+      const response = await axios.get(
+        "https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar"
+      );
       setProducts(response.data);
     } catch (error) {
       console.error("Məhsullar yüklənərkən səhv baş verdi:", error);
@@ -46,48 +43,59 @@ const OurMenuTab = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchProducts();
   }, []);
 
-  const handleAddProduct = async (newProduct) => {
+  const handleAddProduct = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newProduct = {
+      name: formData.get("name"),
+      price: formData.get("price"),
+      img: formData.get("image"),
+    };
     try {
-      const response = await axios.post("https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar", newProduct);
-      setProducts([...products, response.data]);
+      const response = await axios.post(
+        "https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar",
+        newProduct
+      );
+      setProducts((prevProducts) => [...prevProducts, response.data]);
+      setCreateModalOpen(false);
     } catch (error) {
-      console.error("Məhsul əlavə edilərkən səhv:", error);
+      console.error("Məhsul əlavə edilərkən səhv baş verdi:", error);
     }
   };
 
-  const handleEditProduct = async (updatedProduct) => {
+  const handleEditProduct = async (e) => {
+    e.preventDefault();
     try {
-      await axios.put(`https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar/${updatedProduct.id}`, updatedProduct);
-      setProducts(products.map((product) =>
-        product.id === updatedProduct.id ? updatedProduct : product
-      ));
+      await axios.put(
+        `https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar/${selectedItem.id}`,
+        selectedItem
+      );
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product.id === selectedItem.id ? selectedItem : product
+        )
+      );
+      setOpen(false);
     } catch (error) {
-      console.error("Məhsul redaktə edilərkən səhv:", error);
+      console.error("Məhsul redaktə edilərkən səhv baş verdi:", error);
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar/${id}`);
-      setProducts(products.filter((product) => product.id !== id));
+      await axios.delete(
+        `https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar/${id}`
+      );
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.id !== id)
+      );
     } catch (error) {
-      console.error("Məhsul silinərkən səhv:", error);
+      console.error("Məhsul silinərkən səhv baş verdi:", error);
     }
-  };
-
-  const handleOpen = (item) => {
-    setSelectedItem(item);
-    setOpen(true);
-  };
-
-  const handleSaveChanges = (e) => {
-    e.preventDefault();
-    handleEditProduct(selectedItem);
-    setOpen(false);
   };
 
   return (
@@ -98,7 +106,6 @@ const OurMenuTab = () => {
         borderTopLeftRadius: "12px",
         borderTopRightRadius: "12px",
       }}
-      style={{ "--colors-index": colors[index] }}
     >
       <Tabs
         size="lg"
@@ -116,55 +123,97 @@ const OurMenuTab = () => {
       >
         <TabList disableUnderline>
           <Tab disableIndicator>
-            <ListItemDecorator>
-              All
+            <ListItemDecorator onClick={() => setCreateModalOpen(true)}>
+              Məhsul əlavə et
             </ListItemDecorator>
           </Tab>
         </TabList>
-        <Modal open={open} onClose={() => setOpen(false)}>
-          <ModalDialog>
-            <DialogTitle>Edit Product</DialogTitle>
-            <form onSubmit={handleSaveChanges}>
-              <Stack spacing={2}>
-                <FormControl>
-                  <FormLabel>Name</FormLabel>
-                  <Input
-                    name="name"
-                    value={selectedItem.name}
-                    onChange={(e) => setSelectedItem({ ...selectedItem, name: e.target.value })}
-                    required
-                  />
-                   <FormLabel>Price</FormLabel>
-                  <Input
-                    name="price"
-                    value={selectedItem.price}
-                    onChange={(e) => setSelectedItem({ ...selectedItem,price: e.target.value })}
-                    required
-                  />
-                   <FormLabel>Img</FormLabel>
-                  <Input
-                    name="img"
-                    value={selectedItem.img}
-                    onChange={(e) => setSelectedItem({ ...selectedItem, img: e.target.value })}
-                    required
-                  />
-                </FormControl>
-                <Button type="submit">Save Changes</Button>
-              </Stack>
-            </form>
-          </ModalDialog>
-        </Modal>
       </Tabs>
+
+      {/* Məhsul əlavə etmə Modalı */}
+      <Modal open={createModalOpen} onClose={() => setCreateModalOpen(false)}>
+        <ModalDialog>
+          <DialogTitle>Yeni Məhsul Əlavə Et</DialogTitle>
+          <form onSubmit={handleAddProduct}>
+            <Stack spacing={2}>
+              <FormControl>
+                <FormLabel>Məhsulun Adı</FormLabel>
+                <Input name="name" placeholder="Adı" required />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Qiymət</FormLabel>
+                <Input name="price" placeholder="Qiymət" required />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Şəkil URL</FormLabel>
+                <Input name="image" placeholder="Şəkil URL" required />
+              </FormControl>
+              <Button type="submit">Əlavə Et</Button>
+            </Stack>
+          </form>
+        </ModalDialog>
+      </Modal>
+
+      {/* Redaktə Modalı */}
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <ModalDialog>
+          <DialogTitle>Məhsulu Redaktə Et</DialogTitle>
+          <form onSubmit={handleEditProduct}>
+            <Stack spacing={2}>
+              <FormControl>
+                <FormLabel>Məhsulun Adı</FormLabel>
+                <Input
+                  name="name"
+                  value={selectedItem.name}
+                  onChange={(e) =>
+                    setSelectedItem({ ...selectedItem, name: e.target.value })
+                  }
+                  required
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Qiymət</FormLabel>
+                <Input
+                  name="price"
+                  value={selectedItem.price}
+                  onChange={(e) =>
+                    setSelectedItem({
+                      ...selectedItem,
+                      price: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Şəkil URL</FormLabel>
+                <Input
+                  name="img"
+                  value={selectedItem.img}
+                  onChange={(e) =>
+                    setSelectedItem({ ...selectedItem, img: e.target.value })
+                  }
+                  required
+                />
+              </FormControl>
+              <Button type="submit">Yadda Saxla</Button>
+            </Stack>
+          </form>
+        </ModalDialog>
+      </Modal>
+
       {loading ? (
-        <Typography>Loading...</Typography>
+        <Typography>Yüklənir...</Typography>
       ) : (
         products.map((product) => (
           <div key={product.id}>
-            <img src={product.img} alt={product.name} />
+            <img src={product.img} alt={product.name} width="100" />
             <h4>{product.name}</h4>
-            <h4>{product.price}</h4>
-            <Button onClick={() => handleOpen(product)}>Edit</Button>
-            <Button onClick={() => handleDelete(product.id)}>Delete</Button>
+            <h4>{product.price} AZN</h4>
+            <Button onClick={() => (setSelectedItem(product), setOpen(true))}>
+              Redaktə Et
+            </Button>
+            <Button onClick={() => handleDelete(product.id)}>Sil</Button>
           </div>
         ))
       )}
