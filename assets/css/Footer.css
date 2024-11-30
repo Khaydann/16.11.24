@@ -280,3 +280,16 @@ ul li a {
     margin: 0;
   }
 }
+.footer-properity ul li a, .f-extra-nav ul li a {
+  transition: 0.5s;
+}
+.footer-properity ul li a:hover, .f-extra-nav ul li a:hover {
+  color: #f8f8f8;
+}
+
+.f-socialmedia a i {
+  transition: 0.5s;
+}
+.f-socialmedia a i:hover {
+  color: #f8f8f8;
+}

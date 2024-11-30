@@ -35,6 +35,7 @@ import Basket from './assets/Pages/Basket/Basket';
 
 // Onload komponenti
 import Onload from './assets/Components/Onload/Onload';
+import Header from './assets/Components/Header/Header';
 
 const App = () => {
   const [showOnload, setShowOnload] = useState(true);
@@ -84,6 +85,7 @@ const App = () => {
         <Route path="/SL-Roadster" element={<Slroadster />} />
         <Route path="/AMG-GT-Coupé" element={<Amggtccoupe />} />
         <Route path="/Basket" element={<Basket />} />
+        <Route path="/Bt"  element ={<Header/>}/>
       </Routes>
     </Router>
   );

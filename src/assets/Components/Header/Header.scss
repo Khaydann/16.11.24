@@ -3,7 +3,9 @@
   font-family: "Hind Siliguri", sans-serif;
 }
 
-
+.dropdown-name{
+  z-index: 400;
+}
 .header-main {
   background-color: black;
   width: 100%;
@@ -131,6 +133,8 @@
     font-size: 25px;
     color: white;
     cursor: pointer;
+    position: relative;
+    left: 95px;
   }
 
   .dropdown-menu {
@@ -145,6 +149,20 @@
     width: 100px;
   }
 
+  .header-login-signup{
+  display: block;
+ }
+ .link{
+  display: none;
+ }
+ .dropdown-name{
+display: flex;
+flex-direction: column;
+z-index: 9990;
+right: 95px;
+top: 0;
+background-color: #444;
+ }
   .dropdown-item {
     color: #bbbbbb;
     padding: 10px 20px;

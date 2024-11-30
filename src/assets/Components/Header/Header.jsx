@@ -91,6 +91,24 @@ const Header = () => {
                 className="dropdown-icon"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               />
+                {dropdownOpen && (
+                  <div className="dropdown-name">
+                    <a
+                href="#"
+                
+                onClick={() => navigate("/Login")}
+              >
+                Login
+              </a>
+                  <a
+                href="#"
+             
+                onClick={() => navigate("/SignUp")}
+              >
+                Sign Up
+              </a>
+                  </div>
+                )}
             </div>
           )}
         </div>

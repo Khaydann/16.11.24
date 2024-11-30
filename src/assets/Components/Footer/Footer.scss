@@ -293,4 +293,25 @@ footer {
       margin: 0;
     }
   }
-  
+  .footer-properity, .f-extra-nav{
+    ul{
+      li{
+        a{
+          transition: 0.5s;
+          &:hover{
+            color: #f8f8f8;
+          }
+        }
+      }
+    }
+  }
+  .f-socialmedia{
+    a{
+     i{
+      transition: 0.5s;
+      &:hover{
+        color: #f8f8f8;
+      }
+     }
+    }
+  }
