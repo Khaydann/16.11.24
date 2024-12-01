@@ -1,14 +1,13 @@
+@charset "UTF-8";
 .contact-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .contact-background {
   position: relative;
   width: 100%;
-  height: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -137,6 +136,9 @@ label {
   .contact-form {
     padding: 10px;
   }
+  select textarea {
+    color: black !important;
+  }
   .contact-select,
   .contact-input,
   .contact-textarea {
@@ -146,4 +148,27 @@ label {
     padding: 6px 12px;
     font-size: 12px;
   }
+}
+/* Select elementinin rəngini dəyişdir */
+.contact-select {
+  color: #ccc; /* Optionların rəngi */
+  background-color: #fff; /* Select fon rəngi */
+  border: 1px solid #ccc; /* Selectin sərhədi */
+}
+
+/* Message textarea üçün yazının rəngini dəyişdir */
+.contact-textarea {
+  color: #333; /* Burada qara yerinə istədiyiniz rəng kodunu yazın */
+}
+
+/* Option elementlərinin rəngini dəyişdir */
+.contact-o {
+  color: #ccc; /* Optionların rəngi */
+  background-color: #fff; /* Option fon rəngi */
+}
+
+/* Selectin açılan pəncərəsindəki optionlar */
+.contact-select option {
+  color: #ccc; /* Optionların rəngi */
+  background-color: #fff; /* Option fon rəngi */
 }

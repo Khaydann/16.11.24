@@ -40,23 +40,26 @@
         
         color: #767676;
     }
-    .hp-btn {
-        padding: 17px 25px;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-        border-radius: 30px;
-        background-color: #014881;
-        font-weight: bold;
-        color: white;
-        font-size: 17px;
-        border: none;
-        transition: 1s;
-    }
 
-    .hp-btn:hover {
-        background: linear-gradient(45deg, #0288d1, #014881);
-        transform: scale(1.1);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-    }
+    .hp-btn {
+      padding: 17px 25px !important;
+      width: 20% !important;
+      border-radius: 30px!important;
+      background-color: #014881!important;
+      font-weight: bold!important;
+      color: white!important;
+      font-size: 17px!important;
+      border: none!important;
+      transition: 1s!important;
+      height: 66px!important;
+     margin-bottom: 20px;
+     margin-left: 10px;
+     
+  }
+
+  .hp-btn:hover {
+      background: linear-gradient(45deg, #0288d1, #014881)!important;
+      transform: scale(1.1)!important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)!important;
+      cursor: pointer!important;
+  }

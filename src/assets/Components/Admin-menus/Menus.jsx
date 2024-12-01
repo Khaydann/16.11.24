@@ -15,6 +15,8 @@ import ModalDialog from "@mui/joy/ModalDialog";
 import DialogTitle from "@mui/joy/DialogTitle";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
+import Grid from "@mui/joy/Grid";
+import './Menues.css';
 
 const OurMenuTab = () => {
   const [index, setIndex] = useState(0);
@@ -121,14 +123,15 @@ const OurMenuTab = () => {
           },
         }}
       >
-        <TabList disableUnderline>
-          <Tab disableIndicator>
-            <ListItemDecorator onClick={() => setCreateModalOpen(true)}>
+        <TabList disableUnderline className="special">
+          <Tab disableIndicator className="special">
+            <ListItemDecorator className="special" onClick={() => setCreateModalOpen(true)}>
               Məhsul əlavə et
             </ListItemDecorator>
           </Tab>
         </TabList>
       </Tabs>
+      <br />
 
       {/* Məhsul əlavə etmə Modalı */}
       <Modal open={createModalOpen} onClose={() => setCreateModalOpen(false)}>
@@ -205,17 +208,31 @@ const OurMenuTab = () => {
       {loading ? (
         <Typography>Yüklənir...</Typography>
       ) : (
-        products.map((product) => (
-          <div key={product.id}>
-            <img src={product.img} alt={product.name} width="100" />
-            <h4>{product.name}</h4>
-            <h4>{product.price} AZN</h4>
-            <Button onClick={() => (setSelectedItem(product), setOpen(true))}>
-              Redaktə Et
-            </Button>
-            <Button onClick={() => handleDelete(product.id)}>Sil</Button>
-          </div>
-        ))
+        <Grid container spacing={2} className="product-grid">
+          {products.map((product) => (
+            <Grid item xs={6} sm={6} md={4} lg={4} key={product.id} className="product-item">
+              <div className="product-card">
+                <img src={product.img} alt={product.name} className="product-image" />
+                <h4>{product.name}</h4>
+                <h4>{product.price} AZN</h4>
+                <div className="button-container">
+                  <Button
+                    className="edit-button"
+                    onClick={() => (setSelectedItem(product), setOpen(true))}
+                  >
+                    Redaktə Et
+                  </Button>
+                  <Button
+                    className="delete-button"
+                    onClick={() => handleDelete(product.id)}
+                  >
+                    Sil
+                  </Button>
+                </div>
+              </div>
+            </Grid>
+          ))}
+        </Grid>
       )}
     </Box>
   );

@@ -22,9 +22,7 @@ import { useNavigate } from 'react-router-dom'
                 <div className="footer-sirket">
                   <h3>Alıcılar üçün</h3>
                   <ul>
-                    <li>
-                      <a href="">Test drayva yazılmaq</a>
-                    </li>
+                    
                   
                     <li>
                       <a  onClick={()=>navigate("/Showroom")} href="">Showroom siyahısı</a>

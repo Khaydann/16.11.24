@@ -1,0 +1,252 @@
+/* General Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    border-top: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 150px;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  
+    &.card17 {
+      border-left: none;
+      border-right: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+  
+    .title {
+      width: 50%;
+      text-align: left;
+  
+      .name {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+  
+      .password, .email {
+        font-size: 0.9rem;
+        color: #777;
+      }
+    }
+  
+    .money {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #c46d6d;
+    }
+  
+  
+  }
+  
+  /* Modal Styling */
+  .modal-dialog {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  
+    .MuiDialogTitle-root {
+      font-size: 1.5rem;
+      color: #333;
+    }
+  
+    .MuiDialogContent-root {
+      font-size: 1rem;
+      color: #555;
+      padding-bottom: 15px;
+    }
+  }
+  
+  /* Button styling */
+  button {
+    background-color: white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #a34d4d;
+    }
+  }
+  
+  /* Input and Form Control */
+  .MuiFormControl-root {
+    margin-bottom: 15px;
+  
+    .MuiInput-root {
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #f4f4f4;
+  
+      &:focus {
+        border-color: #c46d6d;
+      }
+    }
+  
+    .MuiFormLabel-root {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+  
+  input[type="submit"] {
+    
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #a34d4d;
+    }
+  }
+  /* General Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    
+    background-color: #000000 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+  
+    &.card17 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
+  
+      @media (max-width: 992px) {
+        flex-direction: column; /* 992px-dən kiçik ekranlarda sütun düzülüşü */
+      }
+  
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  
+    .title {
+      width: 100%;
+      text-align: left;
+      color: #ffffff;
+  
+      .name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+  
+      .password, .email {
+        font-size: 0.9rem;
+        color: #dcdcdc;
+      }
+    }
+  
+    .money {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+    }
+  }
+  
+  /* Container for cards - for better layout control */
+  .card-container {
+    display: grid;
+    gap: 20px;
+    
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr); /* 2 kart yan-yana */
+    }
+  
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr; /* 992px-dən kiçikdə bir sütun */
+    }
+  }
+  
+  /* Modal Styling */
+  .modal-dialog {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    background-color: black ;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+ 
+  }
+  
+  /* Input and Form Control */
+  .MuiFormControl-root {
+    margin-bottom: 16px;
+    label {
+      color: #777;
+    }
+  
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      &:focus {
+      
+        outline: none;
+      }
+    }
+  }
+  

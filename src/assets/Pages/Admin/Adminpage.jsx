@@ -11,7 +11,6 @@ import "./admin.css";
 const Admin = () => {
   const [isSidebarHidden, setSidebarHidden] = useState(window.innerWidth < 768);
   const [isSearchFormVisible, setSearchFormVisible] = useState(false);
- 
   const [activePage, setActivePage] = useState("dashboard");
 
   // Ekran boyutuna göre sidebar görünümünü ayarlama
@@ -32,7 +31,7 @@ const Admin = () => {
     switch (activePage) {
       case "dashboard":
         return <Dashboard />;
-      case "Clients":
+      case "clients":
         return <Clients />;
       case "Orders":
         return <Orders />;
@@ -47,19 +46,22 @@ const Admin = () => {
     <>
       <section id="sidebar" className={isSidebarHidden ? "hide" : ""}>
         <a href="#" className="brand">
-          <span className="text p-3">Viva La Pizza</span>
+          <span className="text p-3">Mercedes</span>
         </a>
         <ul className="side-menu top">
-          {["dashboard", "Clients", "Orders", "Menus"].map((menu) => (
+          {[
+            { key: "dashboard", label: "Dashboard" },
+            { key: "clients", label: "İstifadəçi" },
+            { key: "Orders", label: "Əlaqə" },
+            { key: "Menus", label: "Məhsullar" },
+          ].map(({ key, label }) => (
             <li
-              key={menu}
-              className={activePage === menu ? "active" : ""}
-              onClick={() => setActivePage(menu)} // Aktif sayfayı güncelle
+              key={key}
+              className={activePage === key ? "active" : ""}
+              onClick={() => setActivePage(key)} // Aktif sayfayı güncelle
             >
               <a href="#">
-                <span className="text">
-                  {menu.charAt(0).toUpperCase() + menu.slice(1)}
-                </span>
+                <span className="text">{label}</span>
               </a>
             </li>
           ))}
@@ -75,9 +77,6 @@ const Admin = () => {
         />
         {renderContent()}
       </section>
-
-      {/* Karanlık Mod Anahtarı */}
-    
     </>
   );
 };

@@ -4,8 +4,10 @@ import Card from "../../Components/Card/Card";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import "./Aksesuar.scss";
+import { useNavigate } from "react-router-dom";
 
 const Aksessuar = () => {
+  const navigate=useNavigate()
   const [aksessuarlar, setAksessuarlar] = useState([]);
   const [filteredAksessuarlar, setFilteredAksessuarlar] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); // Axtarış üçün state
@@ -83,6 +85,10 @@ const Aksessuar = () => {
             value={searchQuery}
             onChange={handleSearch}
           />
+    <div className="aksesuarlar-icon">
+   <button     onClick={() => navigate("/Basket")}  className="aksesuar-icon-button"> <i class="fa-solid fa-cart-shopping"></i></button>
+   <button onClick={() => navigate("/Sevimlilər")} className="aksesuar-icon-button"><i class="fa-solid fa-heart"></i></button>
+    </div>
         </div>
 
         {/* Məhsul kartları */}

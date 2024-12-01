@@ -1,0 +1,144 @@
+.card-container {
+    .cardl {
+      height: 900px;
+      background-color: black !important;
+    }
+  }
+  
+  .order-container {
+    width: 100%;
+    flex-grow: 1;
+    margin: -12px;
+    padding: 16px;
+    border-top-left-radius: 12px;
+    height: 1000px;
+    border-top-right-radius: 12px;
+    position: relative;
+  
+    .tabs {
+      padding: 4px;
+      height: 100px !important;
+      border-radius: 16px;
+      width: 89%;
+      margin: 0 auto;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  
+      .MuiTab-root {
+        padding: 8px;
+        flex: 1;
+        transition: opacity 0.3s ease;
+        font-weight: 500;
+        font-size: 16px;
+  
+        &:not(.Mui-selected):not(:hover) {
+          opacity: 0.7;
+        }
+  
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+  
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      height: 100px !important;
+      padding: 16px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 300px;
+  
+      p {
+        margin: 8px 0;
+        span {
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  
+    .loading {
+      font-size: 16px;
+      color: #888;
+      font-style: italic;
+    }
+  
+    /* 600px və daha aşağı ekranlar üçün */
+    @media (max-width: 600px) {
+      padding: 8px;
+      height: auto;
+  
+      .tabs {
+        width: 100%;
+        height: auto;
+        padding: 2px;
+  
+        .MuiTab-root {
+          font-size: 14px;
+          padding: 4px;
+        }
+      }
+  
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+  
+      .card {
+        max-width: 100%;
+        padding: 12px;
+        height: auto !important;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    /* 360px və daha aşağı ekranlar üçün */
+    @media (max-width: 360px) {
+      padding: 8px;
+      height: auto;
+      
+      .tabs {
+        width: 100%;
+        padding: 0;
+        .MuiTab-root {
+          font-size: 12px;
+          padding: 4px;
+        }
+      }
+  
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+      }
+  
+      .card {
+        max-width: 100%;
+        padding: 8px;
+        height: auto !important;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+  
+      .cardl p {
+        font-size: 12px;  /* Mətn ölçüsünü kiçiltmək */
+        margin: 4px 0;
+        width: 10%; 
+      }
+  
+      .card span {
+        font-size: 14px;
+        width: 10%; /* `span` içərisindəki mətnin ölçüsünü kiçiltmək */
+      }
+    }
+  }
+  

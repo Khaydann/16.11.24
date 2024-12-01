@@ -251,10 +251,10 @@ const Header = () => {
               {buyerHover && (
                 <div className="submenu">
                   <div className="submenu-item">
-                    <a href="#">Bizimlə Əlaqə</a>
+                    <a  onClick={() => navigate("/Bizimlə-əlaqə")} href="#">Bizimlə Əlaqə</a>
                   </div>
                   <div className="submenu-item">
-                    <a href="#">Showroom siyahısı</a>
+                    <a onClick={() => navigate("/Showroom")} href="#">Showroom siyahısı</a>
                   </div>
                 </div>
               )}

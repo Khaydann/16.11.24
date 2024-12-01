@@ -56,41 +56,41 @@
 .hpsec1-buttons .hpsec1-btn1 {
   padding: 17px 25px !important;
   width: 30% !important;
-  border-radius: 30px;
-  background-color: #014881;
-  font-weight: bold;
-  color: white;
-  font-size: 17px;
-  border: none;
-  transition: 1s;
-  height: 66px;
-  position: relative;
-  top: 21px;
+  border-radius: 30px !important;
+  background-color: #014881 !important;
+  font-weight: bold !important;
+  color: white !important;
+  font-size: 17px !important;
+  border: none !important;
+  transition: 1s !important;
+  height: 66px !important;
+  position: relative !important;
+  top: 21px !important;
 }
 .hpsec1-buttons .hpsec1-btn1:hover {
-  background: linear-gradient(45deg, #0288d1, #014881);
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  background: linear-gradient(45deg, #0288d1, #014881) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
 }
 .hpsec1-buttons .hpsec1-btn2 {
   padding: 17px 25px !important;
   width: 25% !important;
-  border-radius: 30px;
-  background-color: transparent;
-  font-weight: bold;
-  color: white;
-  font-size: 17px;
-  transition: 1s;
-  border: 1px solid white;
+  border-radius: 30px !important;
+  background-color: transparent !important;
+  font-weight: bold !important;
+  color: white !important;
+  font-size: 17px !important;
+  transition: 1s !important;
+  border: 1px solid white !important;
 }
 .hpsec1-buttons .hpsec1-btn2:hover {
-  background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
-  border: 1px solid transparent;
-  color: #333;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  background: linear-gradient(45deg, #d3d3d3, #b0b0b0) !important;
+  border: 1px solid transparent !important;
+  color: #333 !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
 }
 
 @media (max-width: 960px) {

@@ -203,7 +203,7 @@ const Signup = () => {
           <div className="social-media">
            
             <div className="sign">
-              <span onClick={()=>navigate("./../Pages/Homepage")}> I'm already a member Log In</span>
+              <span onClick={()=>navigate("/Login")}> I'm already a member Log In</span>
               {/* <Link href="./../../Pages/login"></Link> */}
             </div>
           </div>

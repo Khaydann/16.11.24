@@ -83,11 +83,11 @@ const Contact = ({ images }) => {
                     className="contact-select"
                     required
                   >
-                    <option value="">Filial seçin</option>
-                    <option value="Automobile Center Absheron LLC">
+                    <option className="contact-o"value="">Filial seçin</option>
+                    <option  className="contact-o" value="Automobile Center Absheron LLC">
                       Automobile Center Absheron LLC
                     </option>
-                    <option value="AutoStar Kaukasus GmbH Azerbaijan LLC">
+                    <option className="contact-o" value="AutoStar Kaukasus GmbH Azerbaijan LLC">
                       AutoStar Kaukasus GmbH Azerbaijan LLC
                     </option>
                   </select>

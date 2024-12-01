@@ -1,12 +1,17 @@
 .card-Section{
-    height: px;
+
     video{
         height: 100vh;
     }
 }
+.sign{
+    &:hover{
+        cursor: pointer;
+    }
+}
 .card{
     position: relative;
-    top: 120px;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.5 )!important;
     height: 600px;
 }
@@ -27,3 +32,10 @@
     }}
    
   
+    @media (max-width: 600px) {
+        .card-Section{
+            width: 20px;
+            position: relative;
+            top: 0;
+        }
+       }

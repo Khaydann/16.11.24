@@ -6,6 +6,7 @@ import axios from "axios";
 import ModalDialog from "@mui/joy/ModalDialog";
 import DialogTitle from "@mui/joy/DialogTitle";
 import DialogContent from "@mui/joy/DialogContent";
+import './Clients.scss'
 
 const Clients = () => {
   const colors = ["primary", "danger", "success", "warning"];
@@ -113,23 +114,16 @@ const Clients = () => {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="card relative flex sm:w-[47%] w-auto sm:h-[100px] items-center justify-between p-2 border-4 rounded-sm border-s-[#c46d6d] border-y-transparent border-e-transparent md:flex-row flex-col"
+                className="card card17 relative flex sm:w-[47%] w-auto sm:h-[100px] items-center justify-between p-2 border-4 rounded-sm border-s-[#c46d6d] border-y-transparent border-e-transparent md:flex-row flex-col"
               >
-                <img
-                  src={
-                    item.image
-                      ? item.image
-                      : "https://6744c25db4e2e04abea38787.mockapi.io/login"
-                  }
-                  alt={item.name}
-                  className="w-[90px] h-[90px] m-2 rounded-[50%]"
-                />
+              
                 <div className="title w-[50%]">
-                  <p className="name font-sans">{item.name}</p>
-                  <p className="password font-mono w-auto">{item.password}</p>
-                  <p className="email font-mono w-auto">{item.email}</p>
+                <div className="namepas">  <p className="name font-sans">{item.name}</p>
+                <p className="password font-mono w-auto">{item.password}</p></div>
+                 <div className="emailmoney"> <p className="email font-mono w-auto">{item.email}</p>
+                 <p className="money font-sans w-auto">{item.budget}₼</p></div>
                 </div>
-                <p className="money font-sans w-auto">{item.budget}₼</p>
+              
           
               </div>
             ))}
