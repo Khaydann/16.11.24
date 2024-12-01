@@ -6,8 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-
+height: auto;
     display: flex;
+    margin: 10px;
     justify-content: center;
     .video{
         position: absolute;
@@ -16,11 +17,13 @@
     .card {
         position: relative;
         z-index: 1;
-        margin: 15px;
+        margin: 10px;
         padding: 30px;
         color: white;
         width: 440px;
         border-radius: 10px;
+   height: 600px;
+        background-color: rgba(0, 0, 0, 0.5 )!important;
 
         h2 {
             display: block;
