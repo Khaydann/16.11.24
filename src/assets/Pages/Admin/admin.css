@@ -41,7 +41,9 @@ body.dark {
 	--dark: #FBFBFB;
 }
 
-
+#greebtn{
+    background-color: green !important;
+}
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -54,6 +56,9 @@ body.dark {
 	transition: .3s ease;
 	overflow-x: hidden;
 	scrollbar-width: none;
+}
+.special{
+	background-color: #000!important;
 }
 #sidebar::--webkit-scrollbar {
 	display: none;

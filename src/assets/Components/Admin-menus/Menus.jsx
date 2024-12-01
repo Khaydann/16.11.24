@@ -136,7 +136,7 @@ const OurMenuTab = () => {
       {/* Məhsul əlavə etmə Modalı */}
       <Modal open={createModalOpen} onClose={() => setCreateModalOpen(false)}>
         <ModalDialog>
-          <DialogTitle>Yeni Məhsul Əlavə Et</DialogTitle>
+          <DialogTitle className="mehsul-buttonn">Yeni Məhsul Əlavə Et</DialogTitle>
           <form onSubmit={handleAddProduct}>
             <Stack spacing={2}>
               <FormControl>
