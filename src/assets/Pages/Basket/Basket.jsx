@@ -11,38 +11,38 @@ const Basket = () => {
     const [deletedItems, setDeletedItems] = useState([]);
 
     useEffect(() => {
-      // Get the 'user' object from localStorage
+      
       const storedUser = JSON.parse(localStorage.getItem('user')) || {};
   
-      // Get the 'cart' and 'deletedItems' from the user object
+     
       const storedCartItems = storedUser.cart || [];
       const storedDeletedItems = JSON.parse(localStorage.getItem('deletedItems')) || [];
   
-      // Set the cart and deleted items states
+ 
       setCartItems(storedCartItems);
       setDeletedItems(storedDeletedItems);
   }, []);
   
 
   const removeItem = (id) => {
-    // Get the 'user' object from localStorage
+
     const storedUser = JSON.parse(localStorage.getItem('user')) || {};
 
-    // Find the item to delete and filter out the deleted item from the cart
+ 
     const itemToDelete = storedUser.cart.find(item => item.id === id);
     const updatedItems = storedUser.cart.filter(item => item.id !== id);
 
-    // Update the cart in the user object
+
     storedUser.cart = updatedItems;
 
-    // Save the updated user object back to localStorage
+
     localStorage.setItem('user', JSON.stringify(storedUser));
 
-    // Add the deleted item to the deletedItems array in localStorage
+ 
     const updatedDeletedItems = [...storedUser.deletedItems || [], itemToDelete];
     localStorage.setItem('deletedItems', JSON.stringify(updatedDeletedItems));
 
-    // Update the state
+
     setCartItems(updatedItems);
 };
 
@@ -51,13 +51,13 @@ const Basket = () => {
 
     
 const updateQuantity = (id, quantity) => {
-  // Get the 'user' object from localStorage
+
   const storedUser = JSON.parse(localStorage.getItem('user')) || {};
 
-  // Update the quantity of the product in the cart
+
   const updatedItems = storedUser.cart.map(item => {
       if (item.id === id) {
-          // Ensure that the quantity doesn't go below 1
+         
           return { 
               ...item, 
               quantity: item.quantity + quantity > 0 ? item.quantity + quantity : 1 
@@ -66,13 +66,12 @@ const updateQuantity = (id, quantity) => {
       return item;
   });
 
-  // Update the 'cart' inside the 'user' object
   storedUser.cart = updatedItems;
 
-  // Save the updated 'user' object back to localStorage
+
   localStorage.setItem('user', JSON.stringify(storedUser));
 
-  // Update the state
+
   setCartItems(updatedItems);
 };
 

@@ -1,45 +1,45 @@
-/* Orijinal Hissələr üçün ümumi stillər */
+
 .orjinal-hisseler-main {
   margin: 0 auto;
-  max-width: 1200px; /* Maksimum genişlik */
+  max-width: 1200px; 
 }
 
-/* .oh-section elementlərinin düzülüşü */
+
 .oh-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   margin-bottom: 40px;
-  flex-direction: row; /* Default olaraq sıralama */
+  flex-direction: row; 
 }
 
-/* .reverse sinifi tətbiq olunur */
+
 .oh-section.reverse {
-  flex-direction: row-reverse; /* reverse sinifi şəkil və mətnin sırasını dəyişir */
+  flex-direction: row-reverse; 
 }
 
-/* Şəkil və mətnə 50% genişlik təyin edilir */
+
 .oh-text, .oh-image {
   flex: 1;
 }
 
-/* 992px və daha kiçik ekranlar üçün */
+
 @media (max-width: 992px) {
   .oh-section {
-    flex-direction: column; /* Elementlər alt-üst düzüləcək */
+    flex-direction: column; 
     text-align: center;
   }
 
   .oh-text, .oh-image {
-    width: 100%; /* Hər biri 100% genişlikdə olacaq */
-    margin-bottom: 20px; /* Alt-üst arasında boşluq */
+    width: 100%;
+    margin-bottom: 20px; 
   }
 }
 
-/* 600px və daha kiçik ekranlar üçün */
+
 @media (max-width: 600px) {
   .oh-section {
-    padding: 10px; /* Mobil cihazlarda əlavə padding */
+    padding: 10px; 
   }
 }

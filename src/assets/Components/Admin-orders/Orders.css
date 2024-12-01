@@ -1,8 +1,6 @@
-.card-container {
-    .cardl {
-      height: 900px;
-      background-color: black !important;
-    }
+.card-container .cardl {
+    height: 900px;
+    background-color: black !important;
   }
   
   .order-container {
@@ -14,131 +12,135 @@
     height: 1000px;
     border-top-right-radius: 12px;
     position: relative;
+  }
   
-    .tabs {
-      padding: 4px;
-      height: 100px !important;
-      border-radius: 16px;
-      width: 89%;
-      margin: 0 auto;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  .order-container .tabs {
+    padding: 4px;
+    height: 100px !important;
+    border-radius: 16px;
+    width: 89%;
+    margin: 0 auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
   
-      .MuiTab-root {
-        padding: 8px;
-        flex: 1;
-        transition: opacity 0.3s ease;
-        font-weight: 500;
-        font-size: 16px;
+  .order-container .tabs .MuiTab-root {
+    padding: 8px;
+    flex: 1;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+    font-size: 16px;
+  }
   
-        &:not(.Mui-selected):not(:hover) {
-          opacity: 0.7;
-        }
+  .order-container .tabs .MuiTab-root:not(.Mui-selected):not(:hover) {
+    opacity: 0.7;
+  }
   
-        &:hover {
-          opacity: 1;
-        }
-      }
+  .order-container .tabs .MuiTab-root:hover {
+    opacity: 1;
+  }
+  
+  .order-container .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .order-container .card {
+    background: #fff;
+    border-radius: 8px;
+    height: 100px !important;
+    padding: 16px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .order-container .card p {
+    margin: 8px 0;
+  }
+  
+  .order-container .card p span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-container .loading {
+    font-size: 16px;
+    color: #888;
+    font-style: italic;
+  }
+  
+  @media (max-width: 600px) {
+    .order-container {
+      padding: 8px;
+      height: auto;
     }
   
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 16px;
-    }
-  
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      height: 100px !important;
-      padding: 16px;
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    .order-container .tabs {
       width: 100%;
-      max-width: 300px;
-  
-      p {
-        margin: 8px 0;
-        span {
-          font-weight: bold;
-          color: #333;
-        }
-      }
+      height: auto;
+      padding: 2px;
     }
   
-    .loading {
-      font-size: 16px;
-      color: #888;
-      font-style: italic;
+    .order-container .tabs .MuiTab-root {
+      font-size: 14px;
+      padding: 4px;
     }
   
-    /* 600px və daha aşağı ekranlar üçün */
-    @media (max-width: 600px) {
+    .order-container .card-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .order-container .card {
+      max-width: 100%;
+      padding: 12px;
+      height: auto !important;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .order-container {
       padding: 8px;
       height: auto;
-  
-      .tabs {
-        width: 100%;
-        height: auto;
-        padding: 2px;
-  
-        .MuiTab-root {
-          font-size: 14px;
-          padding: 4px;
-        }
-      }
-  
-      .card-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-      }
-  
-      .card {
-        max-width: 100%;
-        padding: 12px;
-        height: auto !important;
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-      }
     }
   
-    /* 360px və daha aşağı ekranlar üçün */
-    @media (max-width: 360px) {
+    .order-container .tabs {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .order-container .tabs .MuiTab-root {
+      font-size: 12px;
+      padding: 4px;
+    }
+  
+    .order-container .card-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+    }
+  
+    .order-container .card {
+      max-width: 100%;
       padding: 8px;
-      height: auto;
-      
-      .tabs {
-        width: 100%;
-        padding: 0;
-        .MuiTab-root {
-          font-size: 12px;
-          padding: 4px;
-        }
-      }
+      height: auto !important;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    }
   
-      .card-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        margin-top: 8px;
-      }
+    .cardl p {
+      font-size: 12px;
+      margin: 4px 0;
+      width: 10%;
+    }
   
-      .card {
-        max-width: 100%;
-        padding: 8px;
-        height: auto !important;
-        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
-      }
-  
-      .cardl p {
-        font-size: 12px;  /* Mətn ölçüsünü kiçiltmək */
-        margin: 4px 0;
-        width: 10%; 
-      }
-  
-      .card span {
-        font-size: 14px;
-        width: 10%; /* `span` içərisindəki mətnin ölçüsünü kiçiltmək */
-      }
+    .card span {
+      font-size: 14px;
+      width: 10%;
     }
   }
   

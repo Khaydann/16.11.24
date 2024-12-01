@@ -1,4 +1,4 @@
-/* General Card Styles */
+
 .card {
     position: relative;
     display: flex;
@@ -56,7 +56,7 @@
   
   }
   
-  /* Modal Styling */
+
   .modal-dialog {
     width: 60%;
     padding: 20px;
@@ -80,7 +80,7 @@
     }
   }
   
-  /* Button styling */
+
   button {
     background-color: white;
     color: white;
@@ -91,12 +91,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   
-    &:hover {
-      background-color: #a34d4d;
-    }
+   
   }
   
-  /* Input and Form Control */
+
   .MuiFormControl-root {
     margin-bottom: 15px;
   
@@ -130,7 +128,7 @@
       background-color: #a34d4d;
     }
   }
-  /* General Card Styles */
+
 .card {
     position: relative;
     display: flex;
@@ -159,7 +157,7 @@
       }
   
       @media (max-width: 992px) {
-        flex-direction: column; /* 992px-dən kiçik ekranlarda sütun düzülüşü */
+        flex-direction: column; 
       }
   
       @media (max-width: 600px) {
@@ -192,21 +190,21 @@
     }
   }
   
-  /* Container for cards - for better layout control */
+
   .card-container {
     display: grid;
     gap: 20px;
     
     @media (min-width: 992px) {
-      grid-template-columns: repeat(2, 1fr); /* 2 kart yan-yana */
+      grid-template-columns: repeat(2, 1fr);
     }
   
     @media (max-width: 992px) {
-      grid-template-columns: 1fr; /* 992px-dən kiçikdə bir sütun */
+      grid-template-columns: 1fr; 
     }
   }
   
-  /* Modal Styling */
+ 
   .modal-dialog {
     width: 60%;
     padding: 20px;
@@ -219,7 +217,7 @@
     }
   }
   
-  /* Button styling */
+ 
   button {
     padding: 10px 20px;
     background-color: black ;
@@ -232,7 +230,7 @@
  
   }
   
-  /* Input and Form Control */
+ 
   .MuiFormControl-root {
     margin-bottom: 16px;
     label {

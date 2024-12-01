@@ -7,17 +7,17 @@ const Onload = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotate((prev) => prev + 10); // Hər 100 ms-də 10 dərəcə artır
+      setRotate((prev) => prev + 10); 
     }, 100);
 
-    // 5 saniyə sonra animasiyanı gizləyirik
+   
     const timeout = setTimeout(() => {
-      setShowAnimation(false); // 5 saniyə sonra animasiyanı gizlədirik
-    }, 5000); // 5000 ms = 5 saniyə
+      setShowAnimation(false); 
+    }, 5000);
 
     return () => {
-      clearInterval(interval);  // Təmizləyirik
-      clearTimeout(timeout);     // Təmizləyirik
+      clearInterval(interval); 
+      clearTimeout(timeout);     
     };
   }, []);
 

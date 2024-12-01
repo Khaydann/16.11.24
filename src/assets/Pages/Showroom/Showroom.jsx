@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Showroom.scss'; // SCSS faylını daxil edirik
+import './Showroom.scss'; 
 import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 
@@ -11,7 +11,7 @@ const Showroom = () => {
     <div>
       <Header/>
       <div className="showroom-cards">
-        {/* Eyni ölçüdə olan kart */}
+   
         <div 
           className="showroom-card"
           onClick={() => navigate("/Absheron-adress")}
@@ -27,7 +27,7 @@ const Showroom = () => {
           </div>
         </div>
 
-        {/* Eyni ölçüdə olan başqa kart */}
+       
         <div 
           className="showroom-card"
           onClick={() => navigate("/Babek-adress")}

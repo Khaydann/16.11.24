@@ -61,12 +61,12 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     /* background: #40b659; */
+   
  }
  .product-image{
      width: 296px;
      height: 238px;
-     /* background-color: #541f1f; */
+ 
  }
  .product-details{
      width: 600px;
@@ -76,12 +76,12 @@
         top: 108px;
         font-size: 30px;
      }
-     /* background-color: aqua; */
+    
  }
  .product-price{
      width: 300px;
      height: 238px;
-     /* background-color: #805e5e; */
+    
  }
  
  .product-price span{
@@ -111,7 +111,7 @@
     width: 90%;
     border-radius: 30px;
     background-color: #000;
-    // font-weight: bold;
+  
     color: #fff;
     font-size: 17px;
     transition: 1s;

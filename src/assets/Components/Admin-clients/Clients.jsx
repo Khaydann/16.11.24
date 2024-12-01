@@ -11,7 +11,7 @@ import './Clients.scss'
 const Clients = () => {
   const colors = ["primary", "danger", "success", "warning"];
   const [index, setIndex] = React.useState(0);
-  const [data, setData] = React.useState([]); // Store fetched data
+  const [data, setData] = React.useState([]); 
   const [add, setAdd] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
@@ -24,17 +24,17 @@ const Clients = () => {
       const response = await axios.get(
         "https://6744c25db4e2e04abea38787.mockapi.io/login"
       );
-      console.log(response.data); // Log the response data
-      setData(response.data); // Set the fetched data into state
+      console.log(response.data);
+      setData(response.data);
     } catch (error) {
-      console.error("Error fetching data:", error); // Log any errors
+      console.error("Error fetching data:", error); 
     }
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value, // Form alanını günceller
+      [name]: value,
     }));
   };
   const handleAddPerson = async (e) => {
@@ -51,15 +51,15 @@ const Clients = () => {
         "https://6744c25db4e2e04abea38787.mockapi.io/login",
         formData
       );
-      setData((prevData) => [...prevData, response.data]); // Update the state with new data
-      setAdd(false); // Close the modal
-      setFormData({ name: "", email: "", password: "", image: "" }); // Reset form
+      setData((prevData) => [...prevData, response.data]);
+      setAdd(false); 
+      setFormData({ name: "", email: "", password: "", image: "" }); 
     } catch (error) {
       console.error("Error adding person:", error);
     }
   };
   React.useEffect(() => {
-    getData(); // Fetch data when the component mounts
+    getData();
   }, []);
 
   return (
@@ -72,7 +72,7 @@ const Clients = () => {
         borderTopLeftRadius: "12px",
         borderTopRightRadius: "12px",
         position: "relative",
-        // bgcolor: `${colors[index]}.500`,
+      
       }}
     >
       <Tabs
@@ -99,7 +99,7 @@ const Clients = () => {
             },
           },
           "@media (max-width: 768px)": {
-            width: "auto", // Width will be auto on phone screens
+            width: "auto",
           },
         })}
       >
@@ -148,8 +148,8 @@ const Clients = () => {
                           name="name"
                           placeholder="John"
                           autoFocus
-                          value={formData.name} // formData ile bağlantı kur
-                          onChange={handleInputChange} // onChange olayını bağla
+                          value={formData.name} 
+                          onChange={handleInputChange}  
 
                           required
                         />
@@ -159,8 +159,8 @@ const Clients = () => {
                         <Input
                           name="email"
                           placeholder="jhonadin@gmail.com"
-                          value={formData.email} // formData ile bağlantı kur
-                          onChange={handleInputChange} // onChange olayını bağla
+                          value={formData.email}
+                          onChange={handleInputChange} 
 
                           autoFocus
                           required
@@ -172,8 +172,8 @@ const Clients = () => {
                           name="password"
                           placeholder="gdhjkH876"
                           autoFocus
-                          value={formData.password} // formData ile bağlantı kur
-                          onChange={handleInputChange} // onChange olayını bağla
+                          value={formData.password} 
+                          onChange={handleInputChange} 
 
                           required
                         />
@@ -183,8 +183,8 @@ const Clients = () => {
                         <Input
                           name="image"
                           placeholder="Image link..."
-                          value={formData.image} // formData ile bağlantı kur
-                          onChange={handleInputChange} // onChange olayını bağla
+                          value={formData.image} 
+                          onChange={handleInputChange} 
 
                           autoFocus
                           required

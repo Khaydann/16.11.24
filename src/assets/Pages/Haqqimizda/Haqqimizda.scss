@@ -26,8 +26,7 @@
   width: 100%;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; // Added this to make images wrap in smaller screens
-
+  flex-wrap: wrap; 
   img {
     width: 460px;
     height: 320px;
@@ -79,7 +78,7 @@
   }
 }
 
-// Responsive styles for smaller screens
+
 
 @media (max-width: 960px) {
   .about-picture {

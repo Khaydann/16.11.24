@@ -187,7 +187,7 @@ const Header = () => {
                       </div>
                     )}
                   </div>
-                  {/* MPV */}
+                  
                   <div
                     className="submenu-item"
                     onMouseEnter={() => setSubmenuHover("MPV")}
@@ -202,7 +202,7 @@ const Header = () => {
                       </div>
                     )}
                   </div>
-                  {/* Kupe */}
+                
                   <div
                     className="submenu-item"
                     onMouseEnter={() => setSubmenuHover("Kupe")}
@@ -220,7 +220,7 @@ const Header = () => {
                       </div>
                     )}
                   </div>
-                  {/* Kabriolet */}
+                 
                   <div
                     className="submenu-item"
                     onMouseEnter={() => setSubmenuHover("Kabriolet")}
@@ -242,7 +242,7 @@ const Header = () => {
               )}
             </li>
 
-            {/* Alıcılar üçün submenu */}
+           
             <li
               onMouseEnter={() => setBuyerHover(true)}
               onMouseLeave={() => setBuyerHover(false)}
@@ -260,7 +260,7 @@ const Header = () => {
               )}
             </li>
 
-            {/* Servis üçün submenu */}
+            
             <li
               onMouseEnter={() => setServiceHover(true)}
               onMouseLeave={() => setServiceHover(false)}

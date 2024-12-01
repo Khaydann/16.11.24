@@ -10,8 +10,8 @@ const Aksessuar = () => {
   const navigate=useNavigate()
   const [aksessuarlar, setAksessuarlar] = useState([]);
   const [filteredAksessuarlar, setFilteredAksessuarlar] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); // Axtarış üçün state
-  const [sortOption, setSortOption] = useState(""); // Filtrasiya seçimi üçün state
+  const [searchQuery, setSearchQuery] = useState(""); 
+  const [sortOption, setSortOption] = useState(""); 
   const apiUrl = "https://673cda4596b8dcd5f3fbef5e.mockapi.io/Aksessuarlar";
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Aksessuar = () => {
       try {
         const response = await axios.get(apiUrl);
         setAksessuarlar(response.data);
-        setFilteredAksessuarlar(response.data); // Başlanğıcda bütün məhsullar göstərilir
+        setFilteredAksessuarlar(response.data);
       } catch (error) {
         console.error("API-dən məlumat çəkilərkən xəta baş verdi:", error);
       }
@@ -43,13 +43,13 @@ const Aksessuar = () => {
 
     let sorted = [...filteredAksessuarlar];
     if (option === "az") {
-      sorted.sort((a, b) => a.name.localeCompare(b.name)); // A-dan Z-yə sıralama
+      sorted.sort((a, b) => a.name.localeCompare(b.name)); 
     } else if (option === "za") {
-      sorted.sort((a, b) => b.name.localeCompare(a.name)); // Z-dən A-ya sıralama
+      sorted.sort((a, b) => b.name.localeCompare(a.name)); 
     } else if (option === "priceLowHigh") {
-      sorted.sort((a, b) => a.price - b.price); // Qiymətə görə artan sıralama
+      sorted.sort((a, b) => a.price - b.price); 
     } else if (option === "priceHighLow") {
-      sorted.sort((a, b) => b.price - a.price); // Qiymətə görə azalan sıralama
+      sorted.sort((a, b) => b.price - a.price); 
     }
     setFilteredAksessuarlar(sorted);
   };
@@ -62,9 +62,9 @@ const Aksessuar = () => {
     <>
       <Header />
       <div className="aksesuar-container">
-        {/* Filtrasiya və Axtarış */}
+        
         <div className="aksesuar-filters">
-          {/* Filtrasiya seçimi */}
+        
           <select
             className="aksesuar-select"
             onChange={(e) => handleSort(e.target.value)}
@@ -77,7 +77,7 @@ const Aksessuar = () => {
             <option value="priceHighLow">Qiymət (Çoxdan Aza)</option>
           </select>
 
-          {/* Axtarış sahəsi */}
+      
           <input
             type="text"
             className="aksesuar-search"
@@ -91,7 +91,7 @@ const Aksessuar = () => {
     </div>
         </div>
 
-        {/* Məhsul kartları */}
+   
         <div
           className={`aksesuar-cards ${
             filteredAksessuarlar.length === 0 ? "empty" : ""

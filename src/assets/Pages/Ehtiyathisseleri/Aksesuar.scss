@@ -65,3 +65,70 @@ gap: 30px !important;
     border: 1px solid red !important;
   }
  }
+
+.aksesuar-container {
+  padding: 20px;
+}
+
+
+.aksesuar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.aksesuarlar-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.aksesuar-icon-button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.aksesuar-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.aksesuar-cards.empty {
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 992px) {
+  .aksesuar-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aksesuar-select,
+  .aksesuar-search {
+    width: 100%; 
+  }
+
+  .aksesuar-cards .card {
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 600px) {
+  .aksesuar-cards .card {
+    width: 100%; 
+  }
+}

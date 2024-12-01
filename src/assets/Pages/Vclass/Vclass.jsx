@@ -7,22 +7,22 @@ import Footer from '../../Components/Footer/Footer';
 import Contact from '../../Components/Contact/Contact';
 
 const Vclass = () => {
-  const [slides, setSlides] = useState([]); // Şəkilləri saxlamaq üçün state
+  const [slides, setSlides] = useState([]);  
   const [intImage, setIntImage] = useState('');
   const [exImage, setExImage] = useState('');
 
   useEffect(() => {
-    // API-dən məlumatları axios ilə çəkin
+
     axios
       .get('https://673cda4596b8dcd5f3fbef5e.mockapi.io/Car')
       .then((response) => {
-        // V-class olan obyektləri filtr edin
+    
         const vClassData = response.data.filter(item => item.name === 'V-class');
         
         if (vClassData.length > 0) {
-          const item = vClassData[0]; // V-class obyektini alırıq
+          const item = vClassData[0]; 
           
-          // `white`, `black`, `red` şəkillərini əldə edirik
+      
           const slides = [
             { img: item.white, alt: 'White Car' },
             { img: item.black, alt: 'Black Car' },
@@ -32,11 +32,11 @@ const Vclass = () => {
             { img: item.blue, alt: 'Blue Car' },
           ];
 
-          setSlides(slides); // State-ə şəkilləri yükləyirik
+          setSlides(slides);
           
-          // İç və çöl görüntüləri üçün şəkilləri müəyyənləşdiririk
-          setIntImage(item.int);  // İç görünüş şəkili
-          setExImage(item.ex);  // Çöl görünüş şəkili
+  
+          setIntImage(item.int); 
+          setExImage(item.ex);  
         }
       })
       .catch((error) => {

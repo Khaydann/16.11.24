@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import "./Intex.scss";
 
 const Intex = ({ intImage, exImage }) => {
-  const [selected, setSelected] = useState("int"); // İlk olaraq "int" seçilir
+  const [selected, setSelected] = useState("int"); 
 
   return (
     <div className="intex-container">
       <div className="button-container">
-        {/* Int düyməsi */}
+    
         <button
         id="int-button"
           className={`switch-button int-button ${selected === "int" ? "active" : ""}`}
@@ -16,7 +16,7 @@ const Intex = ({ intImage, exImage }) => {
         >
           Interiyer
         </button>
-        {/* Ex düyməsi */}
+      
         <button
         id="ex-button"
           className={`switch-button ${selected === "ex" ? "active" : ""}`}
@@ -25,10 +25,10 @@ const Intex = ({ intImage, exImage }) => {
         Eksteryer
         </button>
       </div>
-      {/* Şəkil */}
+     
       <div className="image-container">
         <img
-          src={selected === "int" ? intImage : exImage} // `int` və ya `ex` seçiminə görə şəkil
+          src={selected === "int" ? intImage : exImage} 
           alt={selected === "int" ? "Interior Image" : "Exterior Image"}
           className="main-image"
         />
@@ -37,10 +37,10 @@ const Intex = ({ intImage, exImage }) => {
   );
 };
 
-// Props növlərini təyin edin
+
 Intex.propTypes = {
-  intImage: PropTypes.string.isRequired, // İç görünüş şəkili
-  exImage: PropTypes.string.isRequired, // Çöl görünüş şəkili
+  intImage: PropTypes.string.isRequired, 
+  exImage: PropTypes.string.isRequired, 
 };
 
 export default Intex;

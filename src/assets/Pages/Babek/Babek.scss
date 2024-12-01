@@ -1,16 +1,16 @@
 .babek-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Mərkəzləşdirir */
+    align-items: center;
     padding: 20px;
-    gap: 20px; /* İki bölmə arasında boşluq */
+    gap: 20px;
   
     .babek-info-container {
-      width: 45%; /* Yazılar üçün eni */
+      width: 45%; 
       text-align: left;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Yazıları şaquli mərkəzləşdirir */
+      justify-content: center; 
   
       .babek-h2 {
         font-size: 20px;
@@ -27,11 +27,11 @@
   
       .babek-info-divider {
         margin: 10px 0;
-        border-top: 1px solid #d3d3d3; /* Boz xətt */
+        border-top: 1px solid #d3d3d3; 
       }
   
       .babek-contact-details {
-        font-weight: 600; /* Daha qalın font */
+        font-weight: 600; 
         color: #555;
         font-size: 18px;
         margin-bottom: 10px;

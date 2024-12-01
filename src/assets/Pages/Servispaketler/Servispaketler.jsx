@@ -18,7 +18,7 @@ const Servispaketler = () => {
         Mercedes-Benz Xidmət Paketləri vasitəsilə biz bütün planlaşdırılmış texniki xidmət prosedurlarını əhatə edir və xidmət xərclərinizi şəffaf edirik. Paketin müddətindən və yürüş məsafəsindən asılı olaraq, bütün daxil edilmiş xidmətləri əhatə edən sabit qiymət mövcuddur. Beləliklə, siz şəffaf təmir xərclərinə arxalana və xoşagəlməz sürprizlərdən qaça bilərsiniz.
       </p>
       <div className="orjinal-hisseler-main">
-        {/* Birinci div */}
+     
         <div className="oh-section">
           <div className="oh-text">
             <h3>Premium Servis</h3>
@@ -32,7 +32,7 @@ const Servispaketler = () => {
           </div>
         </div>
 
-        {/* İkinci div */}
+     
         <div className="oh-section reverse">
           <div className="oh-image">
             <img 

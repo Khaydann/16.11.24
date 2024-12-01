@@ -13,7 +13,6 @@ const Admin = () => {
   const [isSearchFormVisible, setSearchFormVisible] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
 
-  // Ekran boyutuna göre sidebar görünümünü ayarlama
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 576) {
@@ -26,7 +25,7 @@ const Admin = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Aktif sayfaya göre içerik render fonksiyonu
+
   const renderContent = () => {
     switch (activePage) {
       case "dashboard":
@@ -58,7 +57,7 @@ const Admin = () => {
             <li
               key={key}
               className={activePage === key ? "active" : ""}
-              onClick={() => setActivePage(key)} // Aktif sayfayı güncelle
+              onClick={() => setActivePage(key)} 
             >
               <a href="#">
                 <span className="text">{label}</span>
@@ -68,7 +67,7 @@ const Admin = () => {
         </ul>
       </section>
 
-      {/* Ana içerik */}
+    
       <section id="content">
         <Navbar
           toggleSidebar={() => setSidebarHidden((prev) => !prev)}

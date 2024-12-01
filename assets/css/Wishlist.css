@@ -65,19 +65,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #40b659; */
 }
 
 .product-image {
   width: 296px;
   height: 238px;
-  /* background-color: #541f1f; */
 }
 
 .product-details {
   width: 600px;
   height: 238px;
-  /* background-color: aqua; */
 }
 .product-details h4 {
   position: relative;
@@ -88,7 +85,6 @@
 .product-price {
   width: 300px;
   height: 238px;
-  /* background-color: #805e5e; */
 }
 
 .product-price span {

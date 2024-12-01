@@ -1,28 +1,30 @@
-@charset "UTF-8";
 .bigintro {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start; /* Şəkilin üstü ilə mətni uyğunlaşdırır */
+  align-items: flex-start;
   position: relative;
 }
-.bigintro .bigintro-image {
-  width: 100%; /* Şəkilin ölçüsünü uyğunlaşdırır */
-  height: 500px; /* Şəkilin hündürlüyü */
-  object-fit: cover; /* Şəkil konteynerinə uyğunlaşır */
+
+.bigintro-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
-.bigintro .bigintro-text {
-  font-size: 40px; /* Mətnin ölçüsü */
-  font-weight: bold; /* Qalın şrift */
+
+.bigintro-text {
+  font-size: 40px;
+  font-weight: bold;
   color: #ffffff;
-  margin-left: 30px; /* Şəkilin solunda boşluq */
+  margin-left: 30px;
   line-height: 1.3;
   text-align: left;
   position: absolute;
-  top: 47%; /* Şəkilin ortasında yerləşdiririk */
-  left: 30px; /* Şəkilin sol tərəfi ilə uyğunlaşdırır */
-  transform: translateY(-50%); /* Mətni şaquli olaraq mərkəzləşdirir */
+  top: 47%;
+  left: 30px;
+  transform: translateY(-50%);
 }
-.bigintro .bigintro-btn {
+
+.bigintro-btn {
   padding: 17px 25px;
   width: 20%;
   border-radius: 30px;
@@ -33,10 +35,11 @@
   transition: 1s;
   border: 1px solid white;
   position: absolute;
-  left: 60px; /* Şəkilin sol tərəfi ilə uyğunlaşdırır */
+  left: 60px;
   top: 65%;
 }
-.bigintro .bigintro-btn:hover {
+
+.bigintro-btn:hover {
   background: linear-gradient(45deg, #d3d3d3, #b0b0b0);
   border: 1px solid transparent;
   color: #333;
@@ -49,7 +52,7 @@
   .bigintro-btn {
     width: 30%;
   }
-  .bigintro-btn p {
+  p {
     font-size: 10px;
     text-align: center;
   }
@@ -58,7 +61,7 @@
   .bigintro-btn {
     width: 30%;
   }
-  .bigintro-btn p {
+  p {
     font-size: 4px;
   }
 }

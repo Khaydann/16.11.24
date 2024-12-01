@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-/* Menu Icon */
+
 .menu-icon {
   display: none;
   font-size: 30px;
@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 
-/* Header Links and Logout */
+
 .header-links {
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@
   color: black;
 }
 
-/* Property Navigation */
+
 .header-properity {
   margin-top: 20px;
   text-align: center;
@@ -113,19 +113,25 @@
   display: block;
 }
 
-/* Media Queries for responsiveness */
 
-/* Tablet screen size */
+
 @media (max-width: 960px) {
   .header-properity nav ul li a {
     font-size: 13px;
   }
+  
 }
 
-/* Mobile screen size */
 @media (max-width: 600px) {
   .header-login-signup {
     display: none;
+  }
+  .user-icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 30px;
+    position: relative;
+    top: 10px;
   }
 
   .header-logo img {
@@ -324,7 +330,7 @@ p,span{
   color: #bbb;
 }
 
-/* Styling for p and span tags inside dropdown */
+
 p {
   font-family: 'Roboto', sans-serif;
 }
@@ -334,6 +340,6 @@ span {
 }
 .header-logo {
   display: flex;
-  justify-content: flex-end; /* Logoyu sağa hizalar */
+  justify-content: flex-end; 
   width: 55%;
 }

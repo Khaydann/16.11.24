@@ -98,7 +98,7 @@
 
 .quantity-controls button {
     padding: 5px 10px;
-    background-color: #f3f4f6;
+    
     border: 1px solid #e5e7eb;
     border-radius: 5px;
     cursor: pointer;
@@ -106,9 +106,10 @@
 
 .delete-btn {
     background-color: transparent;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
     margin-left: 10px;
+    color: black;
 }
 
 .cart-summary {
@@ -131,21 +132,7 @@
     color: #232d40;
 }
 
-// .checkout-btn {
-//     width: 100%;
-//     padding: 10px;
-//     background-color: #27ae60;
-//     color: white;
-//     border: none;
-//     border-radius: 5px;
-//     font-size: 16px;
-//     cursor: pointer;
-//     margin-top: 20px;
-// }
 
-// .checkout-btn:hover {
-//     background-color: #219653;
-// }
 .hpsec1-btn2 {
     margin-top: 20px;
     padding: 17px 25px;
@@ -160,7 +147,7 @@
 }
 
 .hpsec1-btn2:hover {
-    background: linear-gradient(45deg, #8a8888, #b0b0b0);
+    background: linear-gradient(45deg, #8a8888, #b0b0b0)!important;
     border: 1px solid transparent;
     color: #333;
     transform: scale(1.1);
@@ -182,9 +169,8 @@
     cursor: pointer;
 }
 
-.restore-btn:hover {
-    background-color: #f39c12;
-}
+
+
 @media(max-width:992px){
     .cart-container{
         display: flex;

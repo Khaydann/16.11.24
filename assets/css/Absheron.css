@@ -1,17 +1,15 @@
-@charset "UTF-8";
 .absheron-container {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Mərkəzləşdirir */
-  padding: 20px;
-  gap: 20px; /* İki bölmə arasında boşluq */
+  align-items: center;
+  gap: 20px;
 }
 .absheron-container .absheron-info-container {
-  width: 45%; /* Yazılar üçün eni */
+  width: 45%;
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Yazıları şaquli mərkəzləşdirir */
+  justify-content: center;
 }
 .absheron-container .absheron-info-container .absheron-h2 {
   font-size: 20px;
@@ -26,10 +24,10 @@
 }
 .absheron-container .absheron-info-container .absheron-info-divider {
   margin: 10px 0;
-  border-top: 1px solid #d3d3d3; /* Boz xətt */
+  border-top: 1px solid #d3d3d3;
 }
 .absheron-container .absheron-info-container .absheron-contact-details {
-  font-weight: 600; /* Daha qalın font */
+  font-weight: 600;
   color: #555;
   font-size: 18px;
   margin-bottom: 10px;

@@ -16,7 +16,7 @@ const Orjinalhisseler = () => {
           İstər köhnə Mercedes modeli üçün əvəzedici hissəyə, istərsə də yeni avtomobil üçün uyğun xidmət hissəsinə ehtiyacınız olmasından asılı olmayaraq, Mercedes-Benz-in hərtərəfli ehtiyat hissələri portfelində hər bir avtomobil və hər büdcə üçün fərdi uyğun seçim var. Əlbəttə ki, bütün hissə xətlərimizlə hər bir hissənin ciddi spesifikasiyalarımıza cavab verdiyinə əmin ola bilərsiniz.
           </p>
     <div className="orjinal-hisseler-main">
-  {/* Birinci div */}
+
   <div className="oh-section">
     <div className="oh-text">
       <h3>Mercedes-Benz orijinal hissələri</h3>
@@ -30,7 +30,7 @@ const Orjinalhisseler = () => {
     </div>
   </div>
 
-  {/* İkinci div */}
+
   <div className="oh-section reverse">
     <div className="oh-image">
       <img 

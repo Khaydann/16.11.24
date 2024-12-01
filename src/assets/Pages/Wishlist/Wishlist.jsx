@@ -17,30 +17,27 @@ const Wishlist = () => {
     }, []);
 
     const removeFromWishlist = (id) => {
-        // Get the current 'user' object from localStorage
+       
         const storedUser = JSON.parse(localStorage.getItem('user')) || {};
     
-        // Update the wishlist inside the 'user' object
+
         const updatedWishlist = storedUser.wishlist.filter(item => item.id !== id);
     
-        // Update the 'user' object with the new wishlist
+  
         storedUser.wishlist = updatedWishlist;
     
-        // Save the updated 'user' object back to localStorage
         localStorage.setItem('user', JSON.stringify(storedUser));
-    
-        // Update the state
+   
         setWishlist(updatedWishlist);
     };
 
     const addAllToCart = () => {
-        // Get the current 'user' object from localStorage
+
         const storedUser = JSON.parse(localStorage.getItem('user')) || {};
     
-        // Get the current cart (basket) from the user object
+      
         let cart = storedUser.cart || [];
     
-        // Add all wishlist items to the cart
         wishlist.forEach(product => {
             const existingProduct = cart.find(item => item.id === product.id);
             if (existingProduct) {
@@ -50,40 +47,38 @@ const Wishlist = () => {
             }
         });
     
-        // Update the 'cart' in the user object
+ 
         storedUser.cart = cart;
-    
-        // Save the updated 'user' object back to localStorage
+
         localStorage.setItem('user', JSON.stringify(storedUser));
     
-        // Alert the user that all products have been added to the cart
+    
         alert("Bütün məhsullar səbətə əlavə olundu!");
     };
     
 
     const addToCart = (product) => {
-        // Get the current 'user' object from localStorage
+
         const storedUser = JSON.parse(localStorage.getItem('user')) || {};
     
-        // Get the current cart (basket) from the user object
+ 
         let cart = storedUser.cart || [];
     
-        // Check if the product already exists in the cart
+
         const existingProduct = cart.find(item => item.id === product.id);
     
         if (existingProduct) {
-            existingProduct.count += 1;  // Increment the count if it exists
+            existingProduct.count += 1;  
         } else {
-            cart.push({ ...product, count: 1 }); // Add new product to cart
+            cart.push({ ...product, count: 1 });
         }
     
-        // Update the 'cart' inside the 'user' object
+      
         storedUser.cart = cart;
-    
-        // Save the updated 'user' object back to localStorage
+ 
         localStorage.setItem('user', JSON.stringify(storedUser));
     
-        // Alert the user that the product has been added to the cart
+       
         alert(`${product.name} səbətə əlavə olundu!`);
     };
     
